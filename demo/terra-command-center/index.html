@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terra Command Center — Engenharia de Software & IA</title>
+  <meta name="description" content="Freelancer em engenharia de IA e desenvolvimento web. Sistemas sob medida, automações, e-commerce, APIs, dashboards e consultoria." />
+  <style>
+    :root {
+      --earth-950: #1a1410;
+      --earth-900: #241c16;
+      --earth-850: #2c221a;
+      --earth-800: #3d2e24;
+      --earth-700: #5c4334;
+      --earth-600: #7a5a45;
+      --earth-500: #a67c52;
+      --earth-400: #c4a574;
+      --earth-300: #e0d0b0;
+      --earth-200: #f0e6d4;
+      --earth-100: #f7f1e8;
+      --earth-50: #fcf9f4;
+      --accent: #d4a017;
+      --accent-soft: #e8c547;
+      --ok: #25d366;
+      --text: #f7f1e8;
+      --muted: #c4b5a0;
+      --card: rgba(61, 46, 36, 0.55);
+      --border: rgba(196, 165, 116, 0.22);
+      --radius: 14px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--earth-50);
+      color: var(--earth-900);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(26, 20, 16, 0.9);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.85rem 0; gap: 1rem;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.65rem;
+      color: var(--earth-100); font-weight: 700; letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .logo-mark {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(145deg, var(--accent), var(--earth-600));
+      display: grid; place-items: center; font-size: 0.85rem; color: var(--earth-950);
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 0.88rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--earth-100); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.75rem 1.25rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid transparent; transition: transform 0.15s, background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent), #b8860b);
+      color: var(--earth-950);
+    }
+    .btn-ghost {
+      background: transparent; border-color: var(--border); color: var(--earth-100);
+    }
+    .btn-ghost:hover { border-color: var(--earth-400); }
+    .btn-ghost-dark {
+      background: transparent; border-color: rgba(92, 67, 52, 0.25); color: var(--earth-800);
+    }
+    .btn-ghost-dark:hover { border-color: var(--earth-500); }
+    .btn-wa { background: var(--ok); color: #062816; }
+
+    .hero {
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 75% 15%, rgba(212, 160, 23, 0.2), transparent 55%),
+        radial-gradient(ellipse 55% 45% at 5% 85%, rgba(122, 90, 69, 0.4), transparent 50%),
+        linear-gradient(165deg, var(--earth-950) 0%, var(--earth-900) 48%, #2a211a 100%);
+      color: var(--text);
+      padding: 5rem 0 5.5rem;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(196, 165, 116, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 165, 116, 0.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black 35%, transparent 95%);
+      pointer-events: none;
+    }
+    .hero .wrap { position: relative; z-index: 1; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; align-items: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.35rem 0.75rem; border-radius: 999px;
+      border: 1px solid var(--border); background: rgba(0, 0, 0, 0.28);
+      color: var(--earth-300); font-size: 0.8rem; margin-bottom: 1.25rem;
+    }
+    .badge i {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent-soft);
+      box-shadow: 0 0 8px var(--accent); display: inline-block;
+    }
+    .hero h1 {
+      font-size: clamp(2.05rem, 4.6vw, 3.25rem);
+      line-height: 1.12; max-width: 14ch; margin-bottom: 1.1rem; letter-spacing: -0.025em;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent-soft); }
+    .hero-lead {
+      max-width: 36rem; color: var(--muted); font-size: 1.08rem; margin-bottom: 1.75rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+    .hero-panel {
+      background: rgba(36, 28, 22, 0.65);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .hero-panel h3 {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--earth-400); margin-bottom: 1rem;
+    }
+    .hero-panel ul { list-style: none; }
+    .hero-panel li {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      padding: 0.65rem 0; border-bottom: 1px solid rgba(196, 165, 116, 0.12);
+      color: var(--muted); font-size: 0.95rem;
+    }
+    .hero-panel li:last-child { border-bottom: none; }
+    .hero-panel li strong { color: var(--earth-200); display: block; font-size: 0.98rem; }
+    .check {
+      flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px;
+      background: rgba(212, 160, 23, 0.2); color: var(--accent-soft);
+      display: grid; place-items: center; font-size: 0.75rem; margin-top: 2px;
+    }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-top: 2.5rem;
+    }
+    .stat {
+      padding: 1rem; border-radius: var(--radius);
+      background: var(--card); border: 1px solid var(--border);
+    }
+    .stat strong { display: block; font-size: 1.3rem; color: var(--accent-soft); }
+    .stat span { font-size: 0.8rem; color: var(--muted); }
+
+    section { padding: 5rem 0; }
+    .section-head { margin-bottom: 2.5rem; max-width: 40rem; }
+    .section-head.center { margin-inline: auto; text-align: center; }
+    .eyebrow {
+      color: var(--earth-600); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.55rem;
+    }
+    .section-head h2 {
+      font-size: clamp(1.65rem, 3vw, 2.2rem); letter-spacing: -0.02em;
+      color: var(--earth-900); margin-bottom: 0.6rem;
+    }
+    .section-head p { color: var(--earth-700); font-size: 1.02rem; }
+    .dark-section .eyebrow { color: var(--earth-400); }
+    .dark-section .section-head h2 { color: var(--earth-100); }
+    .dark-section .section-head p { color: var(--muted); }
+
+    #servicos { background: var(--earth-100); }
+    .grid-3 {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem;
+    }
+    .card {
+      background: #fffdf9;
+      border: 1px solid rgba(92, 67, 52, 0.12);
+      border-radius: var(--radius);
+      padding: 1.45rem 1.3rem;
+      box-shadow: 0 8px 24px rgba(36, 28, 22, 0.05);
+      transition: border-color 0.2s, transform 0.2s;
+      height: 100%;
+    }
+    .card:hover { border-color: rgba(166, 124, 82, 0.45); transform: translateY(-2px); }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: linear-gradient(145deg, var(--earth-200), var(--earth-300));
+      margin-bottom: 0.9rem; font-size: 1.2rem;
+    }
+    .card h3 { font-size: 1.08rem; color: var(--earth-900); margin-bottom: 0.45rem; }
+    .card p { font-size: 0.93rem; color: var(--earth-700); }
+    .card .tag {
+      display: inline-block; margin-top: 0.85rem; font-size: 0.75rem;
+      color: var(--earth-600); font-weight: 600; letter-spacing: 0.04em;
+    }
+
+    #sobre { background: linear-gradient(180deg, #efe6d8 0%, var(--earth-100) 100%); }
+    .about {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2rem; align-items: stretch;
+    }
+    .about-copy p { color: var(--earth-700); margin-bottom: 1rem; font-size: 1.02rem; }
+    .about-copy p:last-of-type { margin-bottom: 1.25rem; }
+    .bullets { list-style: none; margin-top: 0.5rem; }
+    .bullets li {
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(92, 67, 52, 0.12);
+      color: var(--earth-800); display: flex; gap: 0.65rem; font-size: 0.98rem;
+    }
+    .bullets li:last-child { border-bottom: none; }
+    .bullets li::before { content: "▸"; color: var(--accent); font-weight: 700; }
+    .about-panel {
+      background: var(--earth-900); color: var(--earth-100);
+      border-radius: 20px; padding: 1.75rem; border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .about-panel h3 { color: var(--accent-soft); margin-bottom: 0.7rem; font-size: 1.1rem; }
+    .about-panel > p { color: var(--muted); margin-bottom: 1.1rem; font-size: 0.95rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .skill {
+      padding: 0.38rem 0.72rem; border-radius: 999px;
+      background: rgba(196, 165, 116, 0.12); border: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--earth-300);
+    }
+
+    #processo { background: var(--earth-950); color: var(--earth-100); }
+    .steps {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+      counter-reset: step;
+    }
+    .step {
+      background: var(--earth-850); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.4rem 1.2rem; position: relative;
+    }
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: block; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; color: var(--accent-soft); margin-bottom: 0.75rem;
+    }
+    .step h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--earth-100); }
+    .step p { font-size: 0.9rem; color: var(--muted); }
+
+    #depoimentos { background: var(--earth-100); }
+    .quotes {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem;
+    }
+    .quote {
+      background: #fffdf9; border-radius: 16px; padding: 1.5rem;
+      border: 1px solid rgba(92, 67, 52, 0.12);
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .quote blockquote {
+      font-size: 0.98rem; color: var(--earth-800); flex: 1;
+      quotes: "“" "”";
+    }
+    .quote blockquote::before { content: open-quote; color: var(--accent); font-size: 1.4rem; }
+    .quote footer {
+      display: flex; gap: 0.75rem; align-items: center;
+      border-top: 1px solid rgba(92, 67, 52, 0.1); padding-top: 1rem;
+      background: transparent; border-bottom: none; text-align: left;
+    }
+    .avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--earth-500), var(--earth-800));
+      color: var(--earth-100); display: grid; place-items: center;
+      font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .quote cite { font-style: normal; }
+    .quote cite strong { display: block; color: var(--earth-900); font-size: 0.95rem; }
+    .quote cite span { font-size: 0.8rem; color: var(--earth-600); }
+
+    #faq { background: #efe6d8; }
+    .faq-list { max-width: 780px; margin-inline: auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    details.faq {
+      background: #fffdf9; border-radius: 12px; border: 1px solid rgba(92, 67, 52, 0.12);
+      padding: 1rem 1.2rem;
+    }
+    details.faq summary {
+      cursor: pointer; font-weight: 600; color: var(--earth-900);
+      list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after {
+      content: "+"; color: var(--accent); font-size: 1.25rem; font-weight: 400;
+    }
+    details.faq[open] summary::after { content: "−"; }
+    details.faq p {
+      margin-top: 0.75rem; color: var(--earth-700); font-size: 0.95rem;
+      padding-top: 0.75rem; border-top: 1px solid rgba(92, 67, 52, 0.1);
+    }
+
+    #contato { background: var(--earth-950); color: var(--earth-100); padding-bottom: 3.5rem; }
+    .contact-box {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;
+      background: var(--earth-900); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2rem; box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+    }
+    .contact-box h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+    .contact-box > div > p { color: var(--muted); margin-bottom: 1.25rem; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .meta { font-size: 0.95rem; color: var(--muted); margin-top: 1.35rem; line-height: 1.8; }
+    .meta a { color: var(--accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+    .side-note {
+      background: rgba(0, 0, 0, 0.28); border-radius: var(--radius);
+      padding: 1.35rem; border: 1px dashed var(--border);
+    }
+    .side-note strong { display: block; margin-bottom: 0.5rem; color: var(--accent-soft); }
+    .side-note p { font-size: 0.92rem; margin: 0; color: var(--muted); }
+    .side-note ul {
+      margin-top: 1rem; padding-left: 1.1rem; color: var(--muted); font-size: 0.88rem;
+    }
+    .side-note li { margin-bottom: 0.35rem; }
+
+    .site-footer {
+      background: #120e0b; color: var(--muted); padding: 2.5rem 0 1.5rem;
+      border-top: 1px solid rgba(196, 165, 116, 0.1); font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;
+    }
+    .site-footer h4 { color: var(--earth-300); margin-bottom: 0.75rem; font-size: 0.95rem; }
+    .site-footer p { margin-bottom: 0.75rem; max-width: 32ch; }
+    .site-footer ul { list-style: none; }
+    .site-footer li { margin-bottom: 0.4rem; }
+    .site-footer a:hover { color: var(--accent-soft); }
+    .footer-bottom {
+      padding-top: 1.25rem; border-top: 1px solid rgba(196, 165, 116, 0.1);
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid, .about, .contact-box, .footer-grid { grid-template-columns: 1fr; }
+      .grid-3, .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .grid-3, .quotes, .steps, .hero-stats { grid-template-columns: 1fr; }
+      .nav-links a:not(.btn) { display: none; }
+      .hero { padding: 3.5rem 0 4rem; }
+      section { padding: 3.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#topo">
+        <span class="logo-mark">TC</span>
+        Terra Command Center
+      </a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#processo">Processo</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-accent" href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="badge"><i></i> Engenharia de IA · Web · Sistemas sob medida</div>
+            <h1>O posto de comando digital do seu <em>negócio</em></h1>
+            <p class="hero-lead">
+              Sou freelancer em engenharia de software e inteligência artificial.
+              Projeto, construo e integro soluções que organizam a operação, automatizam
+              o repetitivo e abrem canais de venda — do site à API, do MVP ao sistema
+              que a equipe usa todo dia.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-accent" href="#servicos">Explorar serviços</a>
+              <a class="btn btn-ghost" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20Terra%20Command%20Center." target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="O que você leva">
+            <h3>O que você leva</h3>
+            <ul>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Escopo claro</strong> O que entra, o que fica pra depois, prazo e investimento.</div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Código seu</strong> Repositório, deploy e documentação — sem caixa-preta.</div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>IA com propósito</strong> Automação e assistentes onde realmente economizam tempo.</div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div><strong>Contato direto</strong> Sem fila de atendimento de agência. Você fala com quem desenvolve.</div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+        <div class="hero-stats" aria-label="Destaques">
+          <div class="stat"><strong>360°</strong><span>Site, API, painel e integrações</span></div>
+          <div class="stat"><strong>PME+</strong><span>Microempresa até operação maior</span></div>
+          <div class="stat"><strong>IA+</strong><span>Ferramentas com modelos de linguagem</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Portfólio de serviços</p>
+          <h2>Soluções completas, do briefing ao ar</h2>
+          <p>
+            Um leque versátil para quem precisa de tecnologia séria sem a burocracia
+            de uma agência grande. Cada item abaixo pode ser um projeto fechado ou
+            um módulo dentro de um sistema maior.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏪</div>
+            <h3>Sistemas para microempresas</h3>
+            <p>Controle de pedidos, estoque, clientes, orçamentos e financeiro enxuto. Pensado para quem está formalizando o negócio e precisa de ordem no dia a dia sem planilha infinita.</p>
+            <span class="tag">MEI · ME · autônomos</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏢</div>
+            <h3>Sistemas para empresas</h3>
+            <p>ERPs leves, fluxos multi-usuário, permissões por perfil, auditoria e módulos sob demanda para operações já consolidadas que cresceram além do Excel.</p>
+            <span class="tag">Multi-setor · B2B</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🛒</div>
+            <h3>Compra, venda e e-commerce</h3>
+            <p>Lojas online, catálogo, carrinho, checkout, cupons, frete e painel de pedidos. Do MVP de validação à loja com gateway de pagamento e nota fiscal.</p>
+            <span class="tag">Varejo · marketplace interno</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⚙️</div>
+            <h3>Sistemas de automação</h3>
+            <p>Robôs de processo, filas, agendamentos, alertas e pipelines que tiram trabalho repetitivo do time — da conferência de planilha ao disparo em massa.</p>
+            <span class="tag">RPA leve · jobs · filas</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🤖</div>
+            <h3>Ferramentas com IA</h3>
+            <p>Assistentes internos, classificação de dados, geração de conteúdo, chatbots e fluxos com LLMs treinados no seu contexto de negócio e nas suas regras.</p>
+            <span class="tag">LLM · RAG · agentes</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🌐</div>
+            <h3>Sites e landing pages</h3>
+            <p>Presença profissional, páginas de conversão, blogs e portais responsivos com performance, formulários e SEO técnico básico desde o primeiro deploy.</p>
+            <span class="tag">Institucional · campanha</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🔌</div>
+            <h3>APIs e backends</h3>
+            <p>APIs REST/JSON, autenticação, webhooks, filas e serviços pensados para alimentar apps, parceiros, automações e painéis sem acoplamento frágil.</p>
+            <span class="tag">Node · Python · cloud</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🔗</div>
+            <h3>Integrações</h3>
+            <p>WhatsApp Business, ERPs, gateways de pagamento, planilhas, CRMs, e-mail marketing e conectores entre as ferramentas que a equipe já usa no dia a dia.</p>
+            <span class="tag">Zapier-like · nativo</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📊</div>
+            <h3>Dashboards e BI</h3>
+            <p>Painéis em tempo quase real, KPIs e visualizações para decisão rápida — vendas, operação, suporte, estoque ou marketing num só lugar.</p>
+            <span class="tag">Indicadores · relatórios</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📱</div>
+            <h3>Apps web e PWA</h3>
+            <p>Aplicações no navegador com cara de app, instaláveis no celular, ideais para equipes em campo, atendimento ou consulta rápida offline-parcial.</p>
+            <span class="tag">Campo · atendimento</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🛡️</div>
+            <h3>Manutenção e evolução</h3>
+            <p>Correção de bugs, refatoração, hardening de segurança, upgrades de stack e evolução contínua de sistemas legados ou recém-lançados.</p>
+            <span class="tag">Retainer · hotfix</span>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🎓</div>
+            <h3>Consultoria técnica</h3>
+            <p>Diagnóstico de arquitetura, escolha de stack, roadmap de produto, revisão de código e mentoria para sócios técnicos ou times enxutos.</p>
+            <span class="tag">Arquitetura · roadmap</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="wrap about">
+        <div class="about-copy">
+          <div class="section-head">
+            <p class="eyebrow">Sobre</p>
+            <h2>Terra Command Center</h2>
+          </div>
+          <p>
+            Nome de guerra para um posto de comando digital: terra firme, decisões
+            claras e sistemas que obedecem ao negócio — não o contrário. Trabalho como
+            freelancer autônomo, direto com você, do primeiro briefing ao deploy em produção.
+          </p>
+          <p>
+            A ideia é simples: menos teatro de proposta comercial, mais software que
+            resolve. Se o problema cabe em uma automação de três dias, eu digo.
+            Se precisa de um sistema completo em etapas, montamos o mapa juntos.
+          </p>
+          <ul class="bullets">
+            <li>Entrega com código limpo, versionado, documentado e hospedável</li>
+            <li>Comunicação objetiva em português, sem jargão pra impressionar</li>
+            <li>Escopo transparente: o que entra, prazo e o que fica para a próxima fase</li>
+            <li>Preferência por soluções que sua equipe consiga operar sem mim no dia a dia</li>
+          </ul>
+        </div>
+        <aside class="about-panel">
+          <h3>Stack e competências</h3>
+          <p>Ferramentas que uso no dia a dia — ajusto conforme o projeto e o orçamento de infraestrutura.</p>
+          <div class="skills">
+            <span class="skill">JavaScript / TypeScript</span>
+            <span class="skill">Python</span>
+            <span class="skill">React / Next.js</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">FastAPI</span>
+            <span class="skill">PostgreSQL</span>
+            <span class="skill">APIs REST</span>
+            <span class="skill">LLMs / RAG</span>
+            <span class="skill">Automações</span>
+            <span class="skill">Docker</span>
+            <span class="skill">Cloud &amp; VPS</span>
+            <span class="skill">UI responsiva</span>
+            <span class="skill">CI/CD</span>
+            <span class="skill">Auth &amp; segurança</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="processo" class="dark-section">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Como funciona</p>
+          <h2>Do primeiro “oi” até o sistema no ar</h2>
+          <p>Um fluxo curto e previsível, sem surpresa no meio do caminho.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <h3>Conversa e diagnóstico</h3>
+            <p>Você conta o problema, o público e a urgência. Eu devolvo perguntas objetivas e um esboço do que faz sentido construir agora.</p>
+          </article>
+          <article class="step">
+            <h3>Proposta em etapas</h3>
+            <p>Escopo, prazo, investimento e o que fica de fora. Preferência por entregas parciais que já geram valor, em vez de um “big bang”.</p>
+          </article>
+          <article class="step">
+            <h3>Construção e demos</h3>
+            <p>Desenvolvimento com checkpoints: você vê a tela, testa o fluxo e aponta ajuste enquanto ainda é barato mudar de direção.</p>
+          </article>
+          <article class="step">
+            <h3>Deploy e handoff</h3>
+            <p>Publicação, acessos, documentação curta e, se quiser, um pacote de manutenção mensal para evoluir com calma.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Depoimentos</p>
+          <h2>O que clientes diriam (placeholders)</h2>
+          <p>
+            Textos de exemplo para o layout — troque pelos depoimentos reais antes de publicar.
+            Nomes e empresas abaixo são fictícios.
+          </p>
+        </div>
+        <div class="quotes">
+          <article class="quote">
+            <blockquote>
+              Em seis semanas saímos da planilha caótica para um painel de pedidos que a equipe de fato usa. Comunicação direta, sem enrolação.
+            </blockquote>
+            <footer>
+              <div class="avatar">MR</div>
+              <cite>
+                <strong>Marina Ribeiro</strong>
+                <span>Dona · Ateliê Norte (exemplo)</span>
+              </cite>
+            </footer>
+          </article>
+          <article class="quote">
+            <blockquote>
+              Pedimos uma integração entre o WhatsApp e o estoque. Funcionou no primeiro mês e reduziu o tempo de resposta do atendimento pela metade.
+            </blockquote>
+            <footer>
+              <div class="avatar">CS</div>
+              <cite>
+                <strong>Carlos Souza</strong>
+                <span>Operações · Casa &amp; Campo (exemplo)</span>
+              </cite>
+            </footer>
+          </article>
+          <article class="quote">
+            <blockquote>
+              A consultoria de arquitetura evitou um retrabalho caro. Saímos com um roadmap claro e um MVP de API que nossos parceiros já consomem.
+            </blockquote>
+            <footer>
+              <div class="avatar">AL</div>
+              <cite>
+                <strong>Ana Lima</strong>
+                <span>Product · Fluxo Labs (exemplo)</span>
+              </cite>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">FAQ</p>
+          <h2>Perguntas frequentes</h2>
+          <p>Respostas diretas para as dúvidas que mais aparecem no primeiro contato.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq" open>
+            <summary>Você trabalha só com projetos grandes?</summary>
+            <p>Não. Atendo microempresas com sistemas enxutos e também empresas com escopo maior. O que importa é o problema estar claro o bastante para caber em um escopo honesto.</p>
+          </details>
+          <details class="faq">
+            <summary>Quanto tempo leva um projeto típico?</summary>
+            <p>Landing e sites: dias a poucas semanas. Sistemas e e-commerce: algumas semanas a poucos meses, em etapas. Na proposta entra uma estimativa por fase, não um chute único.</p>
+          </details>
+          <details class="faq">
+            <summary>O código fica comigo?</summary>
+            <p>Sim. Você recebe o repositório, credenciais de hospedagem quando aplicável e uma documentação curta do que foi entregue. Sem dependência forçada.</p>
+          </details>
+          <details class="faq">
+            <summary>Dá para incluir inteligência artificial de verdade?</summary>
+            <p>Sim, quando houver dado, processo e retorno claros. Evito “IA de enfeite”: se uma regra simples resolve melhor, eu indico a regra simples.</p>
+          </details>
+          <details class="faq">
+            <summary>Como funciona o pagamento?</summary>
+            <p>Em geral: entrada para iniciar, marcos por entrega parcial e saldo na publicação. Detalhes entram na proposta. Placeholder — ajuste para a sua política real.</p>
+          </details>
+          <details class="faq">
+            <summary>Atende remoto em todo o Brasil?</summary>
+            <p>Sim. Todo o trabalho é remoto, com calls e demos por vídeo ou WhatsApp. Visitas presenciais só se ambos fizer sentido e estiver combinado.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="dark-section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos conversar sobre o seu projeto</h2>
+          <p>Manda uma mensagem com o que você precisa. Respondo pelo WhatsApp ou e-mail com um próximo passo objetivo.</p>
+        </div>
+        <div class="contact-box">
+          <div>
+            <h3>Fale comigo</h3>
+            <p>Números e e-mail abaixo são placeholders — troque pelos seus dados reais antes de publicar o site.</p>
+            <div class="contact-actions">
+              <a class="btn btn-wa" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20Terra%20Command%20Center." target="_blank" rel="noopener">WhatsApp +55 11 99999-9999</a>
+              <a class="btn btn-ghost" href="mailto:contato@terracommand.dev">Enviar e-mail</a>
+            </div>
+            <p class="meta">
+              WhatsApp: <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">+55 11 99999-9999</a><br />
+              E-mail: <a href="mailto:contato@terracommand.dev">contato@terracommand.dev</a><br />
+              Horário sugerido: dias úteis, 9h–18h (America/São_Paulo)
+            </p>
+          </div>
+          <div class="side-note">
+            <strong>O que incluir na primeira mensagem</strong>
+            <p>Quanto mais contexto, mais rápida a resposta útil.</p>
+            <ul>
+              <li>O que o negócio faz hoje</li>
+              <li>Qual dor ou objetivo (venda, operação, automação…)</li>
+              <li>Prazo desejado e se já existe sistema legado</li>
+              <li>Orçamento aproximado, se tiver</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>Terra Command Center</h4>
+          <p>Freelancer em engenharia de IA e desenvolvimento web. Sistemas, automações e presença digital com cara profissional.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#processo">Processo</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato rápido</h4>
+          <ul>
+            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:contato@terracommand.dev">contato@terracommand.dev</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="y"></span> Terra Command Center. Todos os direitos reservados.</span>
+        <span>Feito para abrir no navegador · arquivo HTML único</span>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
