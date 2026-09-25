@@ -28,6 +28,7 @@ Abra a URL exibida pelo servidor local.
 - `/demo/servicos`
 - `/demo/empresa`
 - `/demo/terra-command-center`
+- `/demo/jeff`
 
 ## Publicar na Vercel
 
