@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>METAL MAIA | Serralheria Artística e Estruturas Metálicas</title>
+  <meta name="description" content="Metal Maia: serralheria artística e estruturas metálicas. Portões artísticos e modernos, escadas, guarda-corpos, pergolados e coberturas em ferro e aço, com projeto personalizado e acabamento de alto padrão.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="METAL MAIA">
+  <meta property="og:title" content="METAL MAIA | Serralheria Artística e Estruturas Metálicas">
+  <meta property="og:description" content="Projetos personalizados em ferro e aço, unindo resistência, segurança, design e acabamento de alto padrão.">
+  <meta property="og:image" content="https://terra-command-network-portfolio.vercel.app/demo/metal-maia/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portão artístico em residência de alto padrão — METAL MAIA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="METAL MAIA | Serralheria Artística e Estruturas Metálicas">
+  <meta name="twitter:description" content="Projetos personalizados em ferro e aço, unindo resistência, segurança, design e acabamento de alto padrão.">
+  <meta name="twitter:image" content="https://terra-command-network-portfolio.vercel.app/demo/metal-maia/assets/og-image.jpg">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Fontes: Oswald (títulos) · Cormorant Garamond (destaques) · Inter (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600&display=swap">
+
+  <!-- Hero: pré-carrega a imagem principal -->
+  <link rel="preload" as="image" href="assets/img/hero-portao-md.webp"
+        imagesrcset="assets/img/hero-portao-sm.webp 800w, assets/img/hero-portao-md.webp 1200w, assets/img/hero-portao.webp 2000w"
+        imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Dados estruturados (schema.org). Telefone, e-mail, URL e redes são adicionados pelo js/main.js
+       a partir do objeto CONTACT quando preenchidos — nada de dados inventados aqui. -->
+  <script type="application/ld+json" id="ld-json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "METAL MAIA",
+    "alternateName": "Metal Maia Serralheria Artística e Estruturas Metálicas",
+    "description": "Serralheria artística e estruturas metálicas. Projetos personalizados em ferro e aço, unindo resistência, segurança, design e acabamento de alto padrão.",
+    "slogan": "Serralheria Artística e Estruturas Metálicas",
+    "inLanguage": "pt-BR",
+    "address": { "@type": "PostalAddress", "addressCountry": "BR" },
+    "knowsAbout": ["Portões artísticos", "Portões modernos", "Estruturas metálicas", "Coberturas", "Pergolados metálicos", "Escadas metálicas", "Guarda-corpos", "Corrimãos", "Fachadas metálicas", "Arte em ferro"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Portões artísticos, modernos, de correr e basculantes sob medida" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estruturas metálicas, coberturas e pergolados" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Escadas, guarda-corpos, corrimãos e fachadas metálicas" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peças decorativas em ferro e projetos personalizados" } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ===== Ícones (sprite SVG) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-whatsapp" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.18 1.6 6L4 29l8.17-1.57a12.03 12.03 0 0 0 3.87.64C22.67 28.07 28 22.67 28 16.04 28 9.4 22.67 3 16.04 3zm0 22.04c-1.2 0-2.37-.2-3.5-.6l-.5-.18-4.85.93.96-4.7-.2-.5a10 10 0 0 1-1.55-5.4c0-5.55 4.54-10.06 10.12-10.06 5.55 0 10.06 4.5 10.06 10.06 0 5.58-4.5 10.45-10.54 10.45zm5.5-7.6c-.3-.15-1.78-.88-2.06-.98-.27-.1-.47-.15-.67.15s-.77.98-.95 1.18c-.17.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.24-.25-.58-.5-.5-.68-.5h-.58c-.2 0-.52.08-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.5.7.3 1.26.48 1.7.62.72.23 1.37.2 1.88.12.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19l-4 1zM14 7l3 3"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5" transform="translate(0 -1.5)"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM18.5 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 20V9l6 4V9l6 4V5h3l1 .01V20H3zM8 20v-3h2v3M14 20v-3h2v3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3zM8.5 12l2.5 2.5L16 9.5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5zM8 9.5h8M8 12.5h5"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5L10 21a2.1 2.1 0 0 1-3-3l9.7-9.7zM15 9l-1-1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l5 5L20 6.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3V6zm0 0l9 7 9-7"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm5 5.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM17.2 6.8h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+  </defs>
+</svg>
+
+<!-- =====================================================================
+     CABEÇALHO
+     ===================================================================== -->
+<header class="site-header" id="topo">
+  <div class="container site-header__inner">
+    <a class="brand" href="#inicio" aria-label="METAL MAIA — ir para o início">
+      <img class="brand__mark" src="assets/logo-mark.webp" width="520" height="343" alt="Monograma MM da METAL MAIA">
+      <span class="brand__text"><strong>METAL MAIA</strong><small>Serralheria Artística</small></span>
+    </a>
+
+    <nav class="nav" id="menu" aria-label="Navegação principal">
+      <ul class="nav__list">
+        <li><a href="#inicio" data-nav="inicio">Início</a></li>
+        <li><a href="#portoes" data-nav="portoes">Portões</a></li>
+        <li><a href="#estruturas" data-nav="estruturas">Estruturas</a></li>
+        <li><a href="#arte" data-nav="arte">Arte em Ferro</a></li>
+        <li><a href="#projetos" data-nav="projetos">Projetos</a></li>
+        <li><a href="#sobre" data-nav="sobre">Sobre</a></li>
+        <li><a class="nav__cta" href="#orcamento" data-nav="orcamento">Orçamento</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- =====================================================================
+     1. HERO
+     Troque a imagem: substitua assets/img/hero-portao*.webp (3 tamanhos) — veja README.
+     ===================================================================== -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <picture class="hero__media">
+    <source media="(max-width: 700px)" srcset="assets/img/hero-portao-sm.webp">
+    <source media="(max-width: 1300px)" srcset="assets/img/hero-portao-md.webp">
+    <img src="assets/img/hero-portao.webp" width="2000" height="1333" fetchpriority="high" decoding="async"
+         alt="Portão artístico em ferro na fachada de uma residência de alto padrão">
+  </picture>
+  <div class="hero__shade" aria-hidden="true"></div>
+
+  <div class="container hero__content">
+    <img class="hero__logo" src="assets/logo-mark.webp" width="520" height="343" alt="" aria-hidden="true">
+    <h1 id="hero-title" class="hero__title">
+      <span class="hero__brand">METAL MAIA</span>
+      <span class="hero__tagline">Serralheria Artística e Estruturas Metálicas</span>
+    </h1>
+    <p class="hero__sub">Projetos personalizados em ferro e aço, unindo resistência, segurança, design e acabamento de alto padrão.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#orcamento">Solicitar orçamento <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost" href="#projetos">Conhecer nossos projetos</a>
+    </div>
+  </div>
+
+  <ul class="hero__strip container" aria-label="Diferenciais">
+    <li>Ferro &amp; aço</li><li>Design autoral</li><li>Fabricação própria</li><li>Instalação especializada</li>
+  </ul>
+  <a class="hero__scroll" href="#excelencia" aria-label="Rolar para a próxima seção"><span></span></a>
+</section>
+
+<!-- =====================================================================
+     2. INSTITUCIONAL
+     ===================================================================== -->
+<section class="section section--light" id="excelencia" aria-labelledby="exc-title">
+  <div class="container split">
+    <div class="split__text reveal">
+      <p class="eyebrow">Institucional</p>
+      <h2 id="exc-title" class="h2">Excelência em cada detalhe</h2>
+      <p class="lead">A Metal Maia desenvolve projetos personalizados em ferro e aço — das peças tradicionais aos modelos modernos e exclusivos.</p>
+      <p>Cada trabalho nasce do desenho e da necessidade do cliente e é executado com qualidade, resistência, estética e precisão, do corte à solda, do acabamento à instalação. O resultado é uma peça que protege, valoriza o imóvel e permanece bela ao longo do tempo.</p>
+      <ul class="pillars">
+        <li><span>01</span> Qualidade</li>
+        <li><span>02</span> Resistência</li>
+        <li><span>03</span> Estética</li>
+        <li><span>04</span> Precisão</li>
+      </ul>
+      <a class="link-arrow" href="#portoes">Ver catálogo de portões <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="split__media reveal reveal--delay">
+      <figure class="frame frame--tall">
+        <img src="assets/img/arte-geometricos.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Detalhe de grade em ferro com desenho geométrico entrelaçado">
+      </figure>
+      <figure class="frame frame--small">
+        <img src="assets/img/esp-portoes-artisticos.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Portão artístico com ornamentos em ferro e arco em pedra">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     3. ESPECIALIDADES
+     Cada <li> = 1 cartão. Troque a imagem (assets/img/esp-*.webp), título e descrição.
+     data-project preenche automaticamente o campo "Tipo de projeto" do formulário.
+     ===================================================================== -->
+<section class="section section--dark" id="especialidades" aria-labelledby="esp-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">O que fazemos</p>
+      <h2 id="esp-title" class="h2">Nossas especialidades</h2>
+      <p class="lead">Do portão de entrada à estrutura de grande porte: soluções em metal para residências, comércios e obras.</p>
+    </header>
+
+    <ul class="cards">
+      <li class="card reveal"><a href="#orcamento" data-project="Portões artísticos">
+        <img src="assets/img/esp-portoes-artisticos.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Portão artístico em ferro com ornamentos clássicos">
+        <div class="card__body"><h3>Portões artísticos</h3><p>Ferro trabalhado, arabescos e ornamentos desenhados sob medida.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Portões modernos">
+        <img src="assets/img/esp-portoes-modernos.webp" width="900" height="900" loading="lazy" decoding="async" alt="Portão moderno minimalista em linhas horizontais de aço">
+        <div class="card__body"><h3>Portões modernos</h3><p>Linhas limpas, ripados e geometria contemporânea.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Portões de correr">
+        <img src="assets/img/esp-portoes-correr.webp" width="900" height="604" loading="lazy" decoding="async" alt="Portão de correr preto em muro de bloco">
+        <div class="card__body"><h3>Portões de correr</h3><p>Deslizamento suave, segurança e economia de espaço.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Portões basculantes">
+        <img src="assets/img/esp-portoes-basculantes.webp" width="900" height="506" loading="lazy" decoding="async" alt="Entrada de garagem de casa moderna com portão basculante">
+        <div class="card__body"><h3>Portões basculantes</h3><p>Praticidade para garagens, com acabamento de alto padrão.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Grades e fechamentos">
+        <img src="assets/img/esp-grades.webp" width="900" height="600" loading="lazy" decoding="async" alt="Gradil de ferro com ponteiras ornamentais">
+        <div class="card__body"><h3>Grades e fechamentos</h3><p>Proteção elegante para janelas, muros e áreas externas.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Estruturas metálicas">
+        <img src="assets/img/esp-estruturas.webp" width="900" height="605" loading="lazy" decoding="async" alt="Equipe montando uma grande estrutura metálica">
+        <div class="card__body"><h3>Estruturas metálicas</h3><p>Galpões, mezaninos e estruturas de grande porte.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Coberturas">
+        <img src="assets/img/esp-coberturas.webp" width="900" height="629" loading="lazy" decoding="async" alt="Cobertura metálica laranja de design contemporâneo">
+        <div class="card__body"><h3>Coberturas</h3><p>Garagens, áreas gourmet e acessos protegidos.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Pergolados metálicos">
+        <img src="assets/img/esp-pergolados.webp" width="900" height="600" loading="lazy" decoding="async" alt="Pergolado metálico sobre área externa de residência">
+        <div class="card__body"><h3>Pergolados metálicos</h3><p>Sombra e sofisticação para varandas e jardins.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Escadas metálicas">
+        <img src="assets/img/esp-escadas.webp" width="900" height="599" loading="lazy" decoding="async" alt="Escada metálica contemporânea junto a parede de concreto">
+        <div class="card__body"><h3>Escadas metálicas</h3><p>Retas, em L, helicoidais ou autoportantes.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Guarda-corpos">
+        <img src="assets/img/esp-guarda-corpos.webp" width="900" height="601" loading="lazy" decoding="async" alt="Guarda-corpo metálico em varanda de edifício moderno">
+        <div class="card__body"><h3>Guarda-corpos</h3><p>Segurança com leveza visual, em aço ou com vidro.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Corrimãos">
+        <img src="assets/img/esp-corrimaos.webp" width="900" height="600" loading="lazy" decoding="async" alt="Corrimão de aço escovado em parede branca">
+        <div class="card__body"><h3>Corrimãos</h3><p>Conforto ao toque e acabamento impecável.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Fachadas metálicas">
+        <img src="assets/img/esp-fachadas.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Painel metálico perfurado para fachada">
+        <div class="card__body"><h3>Fachadas metálicas</h3><p>Painéis, brises e revestimentos que dão identidade ao edifício.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Peças decorativas em ferro">
+        <img src="assets/img/esp-pecas-decorativas.webp" width="900" height="600" loading="lazy" decoding="async" alt="Detalhe de ornamento decorativo em ferro com volutas">
+        <div class="card__body"><h3>Peças decorativas em ferro</h3><p>Ornamentos, painéis e objetos exclusivos feitos à mão.</p></div></a></li>
+      <li class="card reveal"><a href="#orcamento" data-project="Projetos personalizados">
+        <img src="assets/img/esp-personalizados.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Portão personalizado com aplicações artísticas em arco de pedra">
+        <div class="card__body"><h3>Projetos personalizados</h3><p>Trouxe uma ideia? Desenhamos e fabricamos a sua solução.</p></div></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================================================================
+     4. CATÁLOGO DE PORTÕES
+     Os itens são gerados por js/main.js (array GATES). Edite lá.
+     ===================================================================== -->
+<section class="section section--light" id="portoes" aria-labelledby="cat-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Portfólio</p>
+      <h2 id="cat-title" class="h2">Catálogo de Portões</h2>
+      <p class="lead">Clássicos em ferro trabalhado, ornamentais, arabescos, modernos minimalistas, ripados, geométricos, casas de alto padrão, chácaras, condomínios e comércios.</p>
+    </header>
+
+    <div class="filters reveal" role="group" aria-label="Filtrar portões por estilo" id="gate-filters">
+      <button type="button" class="chip is-active" data-filter="todos" aria-pressed="true">Todos</button>
+      <button type="button" class="chip" data-filter="artisticos" aria-pressed="false">Artísticos</button>
+      <button type="button" class="chip" data-filter="classicos" aria-pressed="false">Clássicos</button>
+      <button type="button" class="chip" data-filter="modernos" aria-pressed="false">Modernos</button>
+      <button type="button" class="chip" data-filter="residenciais" aria-pressed="false">Residenciais</button>
+      <button type="button" class="chip" data-filter="comerciais" aria-pressed="false">Comerciais</button>
+      <button type="button" class="chip" data-filter="personalizados" aria-pressed="false">Personalizados</button>
+    </div>
+    <p class="filters__count" id="gate-count" aria-live="polite"></p>
+
+    <div class="gate-grid" id="gate-grid">
+      <noscript><p>Ative o JavaScript para ver o catálogo de portões.</p></noscript>
+    </div>
+
+    <p class="note">Imagens de referência temporárias, usadas apenas para demonstrar o layout. Os itens marcados como <em>exemplo ilustrativo</em> são placeholders gerados.</p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     5. ARTE EM FERRO
+     ===================================================================== -->
+<section class="section section--black" id="arte" aria-labelledby="arte-title">
+  <div class="container">
+    <header class="section-head section-head--wide reveal">
+      <p class="eyebrow">Feito à mão</p>
+      <h2 id="arte-title" class="h2">Arte em Ferro</h2>
+      <p class="lead lead--serif">Folhas, arabescos, flores metálicas, brasões e desenhos geométricos: cada ornamento é uma peça única, moldada no fogo e finalizada à mão.</p>
+    </header>
+
+    <ul class="bento" data-lightbox-group="arte">
+      <li class="bento__item bento__item--a reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-folhas-lg.webp" data-lb-caption="Folhas e volutas em ferro">
+        <img src="assets/img/arte-folhas.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Painel de ferro com folhas e volutas sobre fundo preto"><span class="bento__cap">Folhas e volutas</span></button></li>
+      <li class="bento__item bento__item--b reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-arabescos-lg.webp" data-lb-caption="Arabescos forjados">
+        <img src="assets/img/arte-arabescos.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Close de arabescos em ferro forjado"><span class="bento__cap">Arabescos forjados</span></button></li>
+      <li class="bento__item bento__item--c reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-flores-lg.webp" data-lb-caption="Flores metálicas">
+        <img src="assets/img/arte-flores.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Rosa metálica ornamental em grade de ferro"><span class="bento__cap">Flores metálicas</span></button></li>
+      <li class="bento__item bento__item--d reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-brasoes-lg.webp" data-lb-caption="Brasões e ornamentos">
+        <img src="assets/img/arte-brasoes.webp" width="900" height="628" loading="lazy" decoding="async" alt="Portão ornamental com brasão e folhagens metálicas"><span class="bento__cap">Brasões e ornamentos</span></button></li>
+      <li class="bento__item bento__item--e reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-geometricos-lg.webp" data-lb-caption="Desenhos geométricos">
+        <img src="assets/img/arte-geometricos.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Grade de ferro com desenho geométrico em losangos"><span class="bento__cap">Desenhos geométricos</span></button></li>
+      <li class="bento__item bento__item--f reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-forjadas-lg.webp" data-lb-caption="Peças forjadas">
+        <img src="assets/img/arte-forjadas.webp" width="900" height="900" loading="lazy" decoding="async" alt="Martelo moldando ferro incandescente na forja"><span class="bento__cap">Peças forjadas</span></button></li>
+      <li class="bento__item bento__item--g reveal"><button type="button" class="zoomable" data-lb-src="assets/img/arte-ornamentos-lg.webp" data-lb-caption="Ornamentos em ferro e dourado">
+        <img src="assets/img/arte-ornamentos.webp" width="900" height="599" loading="lazy" decoding="async" alt="Frontão com ornamentos em ferro preto e detalhes dourados"><span class="bento__cap">Ornamentos</span></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================================================================
+     6. ESTRUTURAS E COBERTURAS
+     ===================================================================== -->
+<section class="section section--steel" id="estruturas" aria-labelledby="estr-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Grande porte</p>
+      <h2 id="estr-title" class="h2">Estruturas e Coberturas</h2>
+      <p class="lead">Grandes estruturas metálicas, coberturas de garagem e áreas externas, galpões, pergolados e projetos arquitetônicos com engenharia e acabamento.</p>
+    </header>
+
+    <div class="struct-grid" data-lightbox-group="estruturas">
+      <figure class="struct struct--hero reveal"><button type="button" class="zoomable" data-lb-src="assets/img/estr-estrutura-lg.webp" data-lb-caption="Estruturas metálicas de grande porte">
+        <img src="assets/img/estr-estrutura.webp" width="900" height="600" loading="lazy" decoding="async" alt="Estrutura metálica em montagem com guindaste">
+        <figcaption><span>Estruturas metálicas</span>Montagem de grande porte</figcaption></button></figure>
+      <figure class="struct reveal"><button type="button" class="zoomable" data-lb-src="assets/img/estr-galpao-lg.webp" data-lb-caption="Galpões e vãos livres">
+        <img src="assets/img/estr-galpao.webp" width="900" height="600" loading="lazy" decoding="async" alt="Estrutura de aço de um galpão com banhos de luz">
+        <figcaption><span>Galpões</span>Vãos livres</figcaption></button></figure>
+      <figure class="struct reveal"><button type="button" class="zoomable" data-lb-src="assets/img/estr-cobertura-lg.webp" data-lb-caption="Coberturas em balanço">
+        <img src="assets/img/estr-cobertura.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Edifício moderno com cobertura metálica em balanço">
+        <figcaption><span>Coberturas</span>Balanços e marquises</figcaption></button></figure>
+      <figure class="struct reveal"><button type="button" class="zoomable" data-lb-src="assets/img/estr-pergolado-lg.webp" data-lb-caption="Pergolados metálicos">
+        <img src="assets/img/estr-pergolado.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Pergolado metálico sobre pátio externo">
+        <figcaption><span>Pergolados</span>Áreas externas</figcaption></button></figure>
+      <figure class="struct reveal"><button type="button" class="zoomable" data-lb-src="assets/img/estr-arquitetonico-lg.webp" data-lb-caption="Projetos arquitetônicos em aço">
+        <img src="assets/img/estr-arquitetonico.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Grande cobertura arquitetônica em aço e vidro">
+        <figcaption><span>Projetos arquitetônicos</span>Aço e vidro</figcaption></button></figure>
+      <figure class="struct reveal"><button type="button" class="zoomable" data-lb-src="assets/img/estr-garagem-lg.webp" data-lb-caption="Coberturas de garagem">
+        <img src="assets/img/estr-garagem.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Cobertura de garagem sobre entrada de residência">
+        <figcaption><span>Garagens</span>Cobertura para veículos</figcaption></button></figure>
+    </div>
+    <p class="note">Imagens de referência temporárias — substitua pelas fotos de obras da Metal Maia.</p>
+  </div>
+</section>
+
+<!-- =====================================================================
+     7. DO PROJETO À INSTALAÇÃO
+     ===================================================================== -->
+<section class="section section--dark" id="processo" aria-labelledby="proc-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Como trabalhamos</p>
+      <h2 id="proc-title" class="h2">Do projeto à instalação</h2>
+      <p class="lead">Seis etapas acompanhadas de perto, para que o resultado final seja exatamente o que você imaginou.</p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal"><figure><img src="assets/img/proc-01-atendimento.webp" width="900" height="675" loading="lazy" decoding="async" alt="Ilustração de levantamento de medidas de um vão com cotas"></figure>
+        <div class="step__body"><span class="step__n">01</span><svg class="ico step__ico" aria-hidden="true"><use href="#i-chat"/></svg><h3>Atendimento e levantamento das necessidades</h3><p>Ouvimos sua ideia, avaliamos o local e registramos medidas e referências.</p></div></li>
+      <li class="step reveal"><figure><img src="assets/img/proc-02-projeto.webp" width="900" height="675" loading="lazy" decoding="async" alt="Ilustração de desenho técnico de um portão com ornamentos"></figure>
+        <div class="step__body"><span class="step__n">02</span><svg class="ico step__ico" aria-hidden="true"><use href="#i-pen"/></svg><h3>Desenvolvimento do projeto</h3><p>Desenho e definição de materiais, modelo e acabamento para sua aprovação.</p></div></li>
+      <li class="step reveal"><figure><img src="assets/img/proc-03-fabricacao.webp" width="900" height="600" loading="lazy" decoding="async" alt="Soldador trabalhando em estrutura metálica com faíscas"></figure>
+        <div class="step__body"><span class="step__n">03</span><svg class="ico step__ico" aria-hidden="true"><use href="#i-factory"/></svg><h3>Fabricação</h3><p>Corte, dobra, solda e montagem das peças com precisão em nossa oficina.</p></div></li>
+      <li class="step reveal"><figure><img src="assets/img/proc-04-acabamento.webp" width="900" height="600" loading="lazy" decoding="async" alt="Profissional aplicando acabamento em peça metálica"></figure>
+        <div class="step__body"><span class="step__n">04</span><svg class="ico step__ico" aria-hidden="true"><use href="#i-spark"/></svg><h3>Acabamento</h3><p>Lixamento, tratamento e pintura para proteção e beleza duradouras.</p></div></li>
+      <li class="step reveal"><figure><img src="assets/img/proc-05-instalacao.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Equipe realizando instalação de estrutura metálica no local da obra"></figure>
+        <div class="step__body"><span class="step__n">05</span><svg class="ico step__ico" aria-hidden="true"><use href="#i-wrench"/></svg><h3>Instalação</h3><p>Fixação e ajustes finos no local, com equipe especializada.</p></div></li>
+      <li class="step reveal"><figure><img src="assets/img/proc-06-entrega.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Entrada de residência com portão em ferro concluído"></figure>
+        <div class="step__body"><span class="step__n">06</span><svg class="ico step__ico" aria-hidden="true"><use href="#i-check"/></svg><h3>Entrega final</h3><p>Conferência de cada detalhe e entrega do projeto pronto para uso.</p></div></li>
+    </ol>
+
+    <div class="workshop reveal" aria-label="Na oficina">
+      <p class="eyebrow">Na oficina</p>
+      <ul class="workshop__row">
+        <li><img src="assets/img/oficina-corte.webp" width="900" height="600" loading="lazy" decoding="async" alt="Faíscas de corte de metal com esmerilhadeira"><span>Corte</span></li>
+        <li><img src="assets/img/oficina-solda.webp" width="900" height="506" loading="lazy" decoding="async" alt="Solda em estrutura metálica com faíscas"><span>Solda</span></li>
+        <li><img src="assets/img/oficina-forja.webp" width="900" height="600" loading="lazy" decoding="async" alt="Ferreiro moldando metal incandescente na bigorna"><span>Forja</span></li>
+        <li><img src="assets/img/oficina-montagem.webp" width="900" height="605" loading="lazy" decoding="async" alt="Equipe em montagem de grande estrutura de aço"><span>Montagem</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     8. PROJETOS REALIZADOS (premium gallery + antes/depois + ângulos)
+     Todas as imagens desta seção são EXEMPLOS temporários.
+     ===================================================================== -->
+<section class="section section--black" id="projetos" aria-labelledby="proj-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Portfólio</p>
+      <h2 id="proj-title" class="h2">Projetos realizados</h2>
+      <p class="lead">Uma seleção de trabalhos em que design, estrutura e acabamento se encontram.</p>
+    </header>
+
+    <ul class="showcase" data-lightbox-group="projetos">
+      <li class="showcase__item showcase__item--1 reveal"><button type="button" class="zoomable" data-lb-src="assets/img/proj-01-lg.webp" data-lb-caption="Portão em ferro trabalhado — projeto de exemplo">
+        <img src="assets/img/proj-01.webp" width="900" height="771" loading="lazy" decoding="async" alt="Portão em ferro trabalhado entre pilares de tijolo"><span class="showcase__cap"><b>Residência</b> Portão em ferro trabalhado</span></button></li>
+      <li class="showcase__item showcase__item--2 reveal"><button type="button" class="zoomable" data-lb-src="assets/img/proj-02-lg.webp" data-lb-caption="Fechamento em aço — projeto de exemplo">
+        <img src="assets/img/proj-02.webp" width="900" height="600" loading="lazy" decoding="async" alt="Casa de alto padrão com gradil e portão em aço preto"><span class="showcase__cap"><b>Alto padrão</b> Fechamento em aço</span></button></li>
+      <li class="showcase__item showcase__item--3 reveal"><button type="button" class="zoomable" data-lb-src="assets/img/proj-03-lg.webp" data-lb-caption="Pergolado metálico — projeto de exemplo">
+        <img src="assets/img/proj-03.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Pergolado metálico sobre terraço"><span class="showcase__cap"><b>Área externa</b> Pergolado metálico</span></button></li>
+      <li class="showcase__item showcase__item--4 reveal"><button type="button" class="zoomable" data-lb-src="assets/img/proj-04-lg.webp" data-lb-caption="Escada metálica — projeto de exemplo">
+        <img src="assets/img/proj-04.webp" width="900" height="599" loading="lazy" decoding="async" alt="Escada metálica contemporânea"><span class="showcase__cap"><b>Interiores</b> Escada metálica</span></button></li>
+      <li class="showcase__item showcase__item--5 reveal"><button type="button" class="zoomable" data-lb-src="assets/img/proj-05-lg.webp" data-lb-caption="Estrutura metálica — projeto de exemplo">
+        <img src="assets/img/proj-05.webp" width="900" height="600" loading="lazy" decoding="async" alt="Montagem de estrutura metálica de grande porte"><span class="showcase__cap"><b>Estruturas</b> Montagem de grande porte</span></button></li>
+    </ul>
+    <p class="note note--dark">Imagens ilustrativas de referência (temporárias), não representam obras reais da Metal Maia.</p>
+
+    <div class="compare-wrap">
+      <!-- Antes/depois: troque assets/img/ba-antes.webp e ba-depois.webp (mesma proporção) -->
+      <div class="compare-col reveal">
+        <h3 class="h3">Antes &amp; depois</h3>
+        <p class="muted">Arraste para comparar a transformação. <em>Exemplo ilustrativo — substituir por fotos reais.</em></p>
+        <div class="compare" id="compare" style="--pos:50%">
+          <img class="compare__img" src="assets/img/ba-depois.webp" width="1600" height="1073" loading="lazy" decoding="async" alt="Depois: portão novo, preto, instalado em muro de bloco">
+          <div class="compare__before"><img class="compare__img" src="assets/img/ba-antes.webp" width="1600" height="1073" loading="lazy" decoding="async" alt="Antes: o mesmo portão com aspecto desgastado e envelhecido"></div>
+          <span class="compare__label compare__label--before">Antes</span>
+          <span class="compare__label compare__label--after">Depois</span>
+          <span class="compare__tag">Exemplo ilustrativo</span>
+          <span class="compare__handle" aria-hidden="true"><svg class="ico"><use href="#i-chev" transform="rotate(180 12 12)"/></svg><svg class="ico"><use href="#i-chev"/></svg></span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar antes e depois: arraste para revelar">
+        </div>
+      </div>
+
+      <!-- Ângulos da mesma obra: troque assets/img/ang-1..3.webp -->
+      <div class="angles-col reveal reveal--delay">
+        <h3 class="h3">Outros ângulos da mesma obra</h3>
+        <p class="muted">Veja detalhes e perspectivas do projeto. <em>Exemplo ilustrativo.</em></p>
+        <div class="angles" id="angles">
+          <div class="angles__stage">
+            <img id="angles-main" src="assets/img/ang-1.webp" width="1000" height="858" loading="lazy" decoding="async" alt="Ângulo 1: vista geral do portão de entrada">
+            <span class="compare__tag">Exemplo ilustrativo</span>
+          </div>
+          <div class="angles__thumbs" role="tablist" aria-label="Ângulos do projeto">
+            <button type="button" role="tab" aria-selected="true" data-src="assets/img/ang-1.webp" data-alt="Ângulo 1: vista geral do portão de entrada"><img src="assets/img/ang-1.webp" width="1000" height="858" loading="lazy" decoding="async" alt=""><span>Vista geral</span></button>
+            <button type="button" role="tab" aria-selected="false" data-src="assets/img/ang-2.webp" data-alt="Ângulo 2: detalhe central do portão"><img src="assets/img/ang-2.webp" width="1000" height="919" loading="lazy" decoding="async" alt=""><span>Detalhe</span></button>
+            <button type="button" role="tab" aria-selected="false" data-src="assets/img/ang-3.webp" data-alt="Ângulo 3: lateral e pilar do portão"><img src="assets/img/ang-3.webp" width="1000" height="1000" loading="lazy" decoding="async" alt=""><span>Lateral</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     9. NÚMEROS / AUTORIDADE — VALORES EDITÁVEIS (NÃO INVENTAR)
+     Para preencher: troque o texto "+XX" pelo número real e (opcional) coloque o
+     mesmo número em data-count para ativar a animação de contagem.
+       ex.:  <span class="stat__value" data-count="120" data-prefix="+">+XX</span>
+     ===================================================================== -->
+<section class="stats" id="numeros" aria-label="Números da Metal Maia">
+  <div class="container stats__grid">
+    <div class="stat reveal">
+      <span class="stat__value" data-editable="projetos" data-count="" data-prefix="+">+XX</span><!-- EDITAR: nº de projetos -->
+      <span class="stat__label">projetos realizados</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat__value" data-editable="anos" data-count="" data-prefix="+">+XX</span><!-- EDITAR: anos de experiência -->
+      <span class="stat__label">anos de experiência</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat__value stat__value--text">Residencial<br>e comercial</span>
+      <span class="stat__label">atendimento</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat__value stat__value--text">Sob medida</span>
+      <span class="stat__label">projetos exclusivos</span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     10. POR QUE ESCOLHER + DEPOIMENTOS
+     ===================================================================== -->
+<section class="section section--light" id="sobre" aria-labelledby="sobre-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Sobre a Metal Maia</p>
+      <h2 id="sobre-title" class="h2">Por que escolher a Metal Maia?</h2>
+      <p class="lead">Do primeiro rabisco à instalação, cuidamos de cada etapa com o mesmo critério: o que construímos precisa durar e ser bonito.</p>
+    </header>
+
+    <ul class="features">
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-pen"/></svg><h3>Projetos personalizados</h3><p>Cada peça é desenhada para o seu espaço, estilo e necessidade.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-layers"/></svg><h3>Materiais de qualidade</h3><p>Ferro e aço selecionados para resistir ao uso e ao tempo.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg><h3>Acabamento de alto padrão</h3><p>Soldas limpas, superfícies uniformes e pintura de longa duração.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg><h3>Fabricação própria</h3><p>Controle total do processo, do corte à montagem final.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><h3>Segurança e resistência</h3><p>Estruturas dimensionadas com critério para proteger o que importa.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg><h3>Atenção aos detalhes</h3><p>Alinhamentos, encaixes e proporções cuidados em cada peça.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><h3>Atendimento profissional</h3><p>Comunicação clara, orientação técnica e acompanhamento do projeto.</p></li>
+      <li class="feature reveal"><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg><h3>Instalação especializada</h3><p>Equipe preparada para instalar com segurança e acabamento limpo.</p></li>
+    </ul>
+
+    <div class="testimonials" aria-labelledby="dep-title">
+      <h3 id="dep-title" class="h3 reveal">O que dizem nossos clientes</h3>
+      <!-- EDITAR: troque cada cartão por um depoimento real (texto, nome e tipo de projeto) e remova a etiqueta "exemplo". -->
+      <div class="testimonials__grid">
+        <figure class="quote reveal">
+          <span class="quote__flag">Depoimento de exemplo — substituir por depoimento real</span>
+          <blockquote><p>“Texto de exemplo: aqui entra o depoimento real de um cliente sobre o atendimento, o prazo e o acabamento do projeto.”</p></blockquote>
+          <figcaption><b>Cliente exemplo</b><span>Portão residencial</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <span class="quote__flag">Depoimento de exemplo — substituir por depoimento real</span>
+          <blockquote><p>“Texto de exemplo: aqui entra o depoimento real de um cliente sobre a qualidade do material e a instalação.”</p></blockquote>
+          <figcaption><b>Cliente exemplo</b><span>Estrutura / cobertura</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <span class="quote__flag">Depoimento de exemplo — substituir por depoimento real</span>
+          <blockquote><p>“Texto de exemplo: aqui entra o depoimento real de um cliente sobre o projeto personalizado e o resultado final.”</p></blockquote>
+          <figcaption><b>Cliente exemplo</b><span>Projeto personalizado</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     11. CTA FINAL / FORMULÁRIO (envia via WhatsApp)
+     O número é configurado em js/main.js → WHATSAPP_NUMBER
+     ===================================================================== -->
+<section class="section section--cta" id="orcamento" aria-labelledby="orc-title">
+  <div class="container cta">
+    <div class="cta__text reveal">
+      <p class="eyebrow">Orçamento</p>
+      <h2 id="orc-title" class="h2">Transforme sua ideia em um projeto exclusivo</h2>
+      <p class="lead">Envie sua referência, medida ou ideia. A Metal Maia desenvolve uma solução personalizada para seu projeto.</p>
+      <ul class="cta__points">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Projeto sob medida</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Atendimento residencial e comercial</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Resposta direta pelo WhatsApp</li>
+      </ul>
+    </div>
+
+    <form class="form reveal reveal--delay" id="quote-form" novalidate>
+      <div class="field">
+        <label for="f-nome">Nome</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome">
+      </div>
+      <div class="field">
+        <label for="f-tel">Telefone / WhatsApp</label>
+        <input id="f-tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(DDD) 00000-0000">
+      </div>
+      <div class="field">
+        <label for="f-cidade">Cidade</label>
+        <input id="f-cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Sua cidade">
+      </div>
+      <div class="field">
+        <label for="f-tipo">Tipo de projeto</label>
+        <select id="f-tipo" name="tipo">
+          <option value="">Selecione…</option>
+          <option>Portões artísticos</option>
+          <option>Portões modernos</option>
+          <option>Portões de correr</option>
+          <option>Portões basculantes</option>
+          <option>Grades e fechamentos</option>
+          <option>Estruturas metálicas</option>
+          <option>Coberturas</option>
+          <option>Pergolados metálicos</option>
+          <option>Escadas metálicas</option>
+          <option>Guarda-corpos</option>
+          <option>Corrimãos</option>
+          <option>Fachadas metálicas</option>
+          <option>Peças decorativas em ferro</option>
+          <option>Projetos personalizados</option>
+        </select>
+      </div>
+      <div class="field field--full">
+        <label for="f-msg">Mensagem</label>
+        <textarea id="f-msg" name="mensagem" rows="4" placeholder="Conte sua ideia, medidas aproximadas ou referências."></textarea>
+      </div>
+      <div class="field field--full">
+        <label for="f-file">Foto ou referência (opcional)</label>
+        <div class="file">
+          <input id="f-file" name="arquivo" type="file" accept="image/*,.pdf" multiple aria-describedby="file-help">
+          <label class="file__btn" for="f-file"><svg class="ico" aria-hidden="true"><use href="#i-upload"/></svg> Anexar foto ou referência</label>
+          <ul class="file__list" id="file-list" aria-live="polite"></ul>
+        </div>
+        <p class="help" id="file-help">Os navegadores não conseguem anexar arquivos a links do WhatsApp. Por isso, <strong>envie as fotos e referências diretamente na conversa</strong> do WhatsApp, depois de tocar no botão abaixo.</p>
+      </div>
+
+      <div class="form__notice" id="wa-notice" role="alert" hidden>
+        <strong>WhatsApp ainda não configurado.</strong> O número da Metal Maia precisa ser definido em <code>js/main.js</code> (constante <code>WHATSAPP_NUMBER</code>). Assim que isso for feito, este botão abrirá a conversa com a mensagem pronta.
+      </div>
+      <div class="form__error" id="form-error" role="alert" hidden></div>
+
+      <button class="btn btn--whatsapp field--full" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg> Solicitar orçamento pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- =====================================================================
+     13. RODAPÉ — campos de contato EDITÁVEIS (objeto CONTACT em js/main.js)
+     Enquanto não preenchidos, aparecem os marcadores entre colchetes.
+     ===================================================================== -->
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="assets/logo-full.webp" width="560" height="444" loading="lazy" decoding="async" alt="Logotipo METAL MAIA: monograma em aço escovado">
+      <p class="footer__name">METAL MAIA</p>
+      <p class="footer__tag">Serralheria Artística e Estruturas Metálicas</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Rodapé">
+      <h2 class="footer__h">Navegação</h2>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#portoes">Portões</a></li>
+        <li><a href="#estruturas">Estruturas</a></li>
+        <li><a href="#arte">Arte em Ferro</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </nav>
+
+    <address class="footer__contact">
+      <h2 class="footer__h">Contato</h2>
+      <ul>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="k">WhatsApp 2</span> <span class="ph" data-contact="whatsapp2">[WhatsApp]</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="k">WhatsApp</span> <span class="ph" data-contact="whatsapp">[WhatsApp]</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-insta"/></svg><span class="k">Instagram</span> <span class="ph" data-contact="instagram">[Instagram]</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span class="k">E-mail</span> <span class="ph" data-contact="email">[E-mail]</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="k">Endereço</span> <span class="ph" data-contact="endereco">[Endereço]</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="k">Região de atendimento</span> <span class="ph" data-contact="regiao">[Região de atendimento]</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span class="k">Horário de funcionamento</span> <span class="ph" data-contact="horario">[Horário de funcionamento]</span></li>
+      </ul>
+    </address>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year">2026</span> METAL MAIA. Todos os direitos reservados.</p>
+    <p class="footer__credit">Imagens de referência temporárias — veja assets/img/CREDITS.md</p>
+  </div>
+</footer>
+
+<!-- 12. Botão flutuante do WhatsApp (usa o mesmo WHATSAPP_NUMBER) -->
+<a class="wa-float" id="wa-float" href="#orcamento" aria-label="Falar com a Metal Maia pelo WhatsApp">
+  <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  <span class="wa-float__label">WhatsApp</span>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagens" aria-hidden="true" hidden>
+  <button class="lb__btn lb__close" type="button" aria-label="Fechar (Esc)"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <button class="lb__btn lb__prev" type="button" aria-label="Imagem anterior"><svg class="ico" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-chev"/></svg></button>
+  <button class="lb__btn lb__next" type="button" aria-label="Próxima imagem"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+  <figure class="lb__fig">
+    <div class="lb__stage"><img class="lb__img" src="" alt=""></div>
+    <figcaption class="lb__cap"><span class="lb__title"></span><span class="lb__count"></span></figcaption>
+  </figure>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
