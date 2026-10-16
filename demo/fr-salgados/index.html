@@ -1,0 +1,10 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Fr Salgados – Cardápio</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>Fr Salgados</h1><p class="sub">Salgados e Pastelaria</p><p class="addr">📍 Rua Fernando Pessoa, 524</p></header>
+<nav id="tabs"></nav><main id="menu"></main>
+<div id="bar" hidden><button id="openCart"><span id="barCount"></span><span>Ver pedido</span><strong id="barTotal"></strong></button></div>
+<div id="drawer" hidden><div class="panel"><div class="dh"><h2>Seu pedido</h2><button id="closeCart" aria-label="Fechar">✕</button></div>
+<ul id="cartList"></ul><p class="total">Total: <strong id="cartTotal"></strong></p>
+<label>Nome<input id="fName"></label><label>Endereço<input id="fAddr"></label><label>Observação<textarea id="fObs" rows="2"></textarea></label>
+<label>Forma de pagamento<select id="fPay"><option value="">Selecione</option><option>Dinheiro</option><option>Pix</option><option>Cartão de débito</option><option>Cartão de crédito</option></select></label>
+<button id="finish">Finalizar pedido no WhatsApp</button></div></div>
+<script src="app.js"></script></body></html>
