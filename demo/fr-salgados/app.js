@@ -1,3 +1,4 @@
+// WhatsApp da loja: 55 + DDD + número (só dígitos).
 const WHATSAPP_NUMBER = '5511955683703';
 
 const MENU = [
@@ -46,16 +47,26 @@ function buildMessage(cart,f={}){const L=cartLines(cart);let m='*Pedido - Fr Sal
  if(f.name)m+=`\nNome: ${f.name}`;if(f.addr)m+=`\nEndereço: ${f.addr}`;if(f.pay)m+=`\nPagamento: ${f.pay}`;if(f.obs)m+=`\nObservação: ${f.obs}`;return m.trim()}
 function waUrl(cart,f){return 'https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(buildMessage(cart,f))}
 if(typeof module!=='undefined')module.exports={ITEMS,cartTotal,buildMessage,waUrl};
+// Fotos ilustrativas (ver assets/img/CREDITS.md)
+const IMG_BY_NAME={'Bacon Onion':'burger-bacon-stack','Salada Artesanal':'burger-salada','Burguer Artesanal':'burger-classic','Bacon Barbecue':'burger-bacon-bbq','Doritos Burguer':'burger-double-cheddar',
+ 'Casa 1':'combo-coca','Casa 2':'combo-fries','Misto Quente':'misto-quente','Bauru':'misto-quente','X-Burguer':'x-burguer','X-Calabresa':'sandwich-tall','X-Frango':'x-frango',
+ 'Americano':'sandwich-club','X-Salada':'burger-salada','X-Bacon':'burger-bacon-bbq','X-Egg':'burger-classic','X-Bacon Cheddar':'burger-double-cheddar','X-Caipira':'x-frango',
+ 'X-Contra Filé':'burger-bacon-stack','X-Tudo':'combo-fries-2','Churros':'churros'};
+const COMBO_IMGS=['combo-fries-2','combo-fries','combo-coca','fries'];
+function imgFor(cat,name,ii){if(IMG_BY_NAME[name])return IMG_BY_NAME[name];if(cat==='Pastéis')return 'pastel-'+(ii%3+1);if(cat==='Combos')return COMBO_IMGS[ii%4];return 'burger-classic'}
 if(typeof document!=='undefined'){const cart={};const $=s=>document.querySelector(s);
- $('#tabs').innerHTML=MENU.map((c,i)=>`<a href="#c${i}">${c.icon} ${c.cat}</a>`).join('');
- $('#menu').innerHTML=MENU.map((c,ci)=>`<section id="c${ci}"><h2 class="cat">${c.icon} ${c.cat}</h2>${c.note?`<p class="note">${c.note}</p>`:''}`+c.items.map((it,ii)=>{const id=ci+'-'+ii;return `<div class="item"><div><h3>${it[0]}</h3>${it[2]?`<p>${it[2]}</p>`:''}<span class="price">${brl(it[1])}</span></div><div class="qty"><button class="m" data-d="-1" data-id="${id}">−</button><span id="q${id}">0</span><button data-d="1" data-id="${id}">+</button></div></div>`}).join('')+'</section>').join('');
- function render(){Object.keys(ITEMS).forEach(id=>{const e=document.getElementById('q'+id);if(e)e.textContent=cart[id]||0});
-  const L=cartLines(cart),n=L.reduce((s,l)=>s+l.q,0);$('#bar').hidden=!n;$('#barCount').textContent=n+(n>1?' itens':' item');
-  $('#barTotal').textContent=$('#cartTotal').textContent=brl(cartTotal(cart));
-  $('#cartList').innerHTML=L.map(l=>`<li><span>${l.q}x ${l.name}<br><small>${brl(l.price)} cada</small></span><span class="qty"><button class="m" data-d="-1" data-id="${l.id}">−</button><b>${brl(l.sub)}</b><button data-d="1" data-id="${l.id}">+</button></span></li>`).join('');
-  if(!n)$('#drawer').hidden=true}
+ $('#tabs').innerHTML=MENU.map((c,i)=>`<a href="#c${i}" data-i="${i}">${c.cat}</a>`).join('');
+ $('#menu').innerHTML=MENU.map((c,ci)=>`<section id="c${ci}" class="sec"><div class="sec-h"><h2>${c.cat}</h2>${c.note?`<span class="note">${c.note}</span>`:''}</div><div class="grid">`+c.items.map((it,ii)=>{const id=ci+'-'+ii;return `<article class="card" id="card${id}"><div class="info"><h3>${it[0]}</h3>${c.note&&ci===0?`<p class="tag">${c.note}</p>`:''}${it[2]?`<p class="desc">${it[2]}</p>`:''}<div class="row"><span class="price">${brl(it[1])}</span></div></div><div class="pic"><img src="assets/img/${imgFor(c.cat,it[0],ii)}.webp" alt="${it[0]}" loading="lazy" width="600" height="600"><div class="ctl"><button class="add" data-d="1" data-id="${id}" aria-label="Adicionar ${it[0]}">+</button><div class="step"><button data-d="-1" data-id="${id}" aria-label="Remover">−</button><span id="q${id}">0</span><button data-d="1" data-id="${id}" aria-label="Adicionar">+</button></div></div></div></article>`}).join('')+'</div></section>').join('');
+ function render(){Object.keys(ITEMS).forEach(id=>{const e=document.getElementById('q'+id);if(e){const q=cart[id]||0;e.textContent=q;document.getElementById('card'+id).classList.toggle('on',q>0)}});
+  const L=cartLines(cart),n=L.reduce((s,l)=>s+l.q,0);$('#bar').classList.toggle('show',!!n);$('#barCount').textContent=n;$('#barLabel').textContent=n>1?'itens':'item';
+  $('#barTotal').textContent=$('#cartTotal').textContent=$('#cartSub').textContent=brl(cartTotal(cart));
+  $('#cartList').innerHTML=L.map(l=>`<li><div class="li-t"><b>${l.name}</b><small>${brl(l.price)} cada</small></div><div class="step sm"><button data-d="-1" data-id="${l.id}" aria-label="Remover">−</button><span>${l.q}</span><button data-d="1" data-id="${l.id}" aria-label="Adicionar">+</button></div><b class="li-s">${brl(l.sub)}</b></li>`).join('');
+  if(!n)close()}
+ const open=()=>{$('#drawer').classList.add('open');document.body.classList.add('lock')},close=()=>{$('#drawer').classList.remove('open');document.body.classList.remove('lock')};
  document.addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(!b)return;const id=b.dataset.id;cart[id]=Math.max(0,(cart[id]||0)+ +b.dataset.d);render()});
- $('#openCart').onclick=()=>$('#drawer').hidden=false;$('#closeCart').onclick=()=>$('#drawer').hidden=true;
- $('#drawer').onclick=e=>{if(e.target.id==='drawer')$('#drawer').hidden=true};
+ $('#openCart').onclick=open;$('#closeCart').onclick=close;$('#drawer').onclick=e=>{if(e.target.id==='drawer')close()};
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
  $('#finish').onclick=()=>{window.open(waUrl(cart,{name:$('#fName').value.trim(),addr:$('#fAddr').value.trim(),obs:$('#fObs').value.trim(),pay:$('#fPay').value}),'_blank')};
+ const tabs=[...document.querySelectorAll('#tabs a')];const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const i=en.target.id.slice(1);tabs.forEach(t=>t.classList.toggle('act',t.dataset.i===i));const a=tabs[i];a.parentNode.scrollTo({left:a.offsetLeft-16,behavior:'smooth'})}}),{rootMargin:'-120px 0px -70% 0px'});
+ document.querySelectorAll('.sec').forEach(s=>io.observe(s));
  render()}
