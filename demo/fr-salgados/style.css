@@ -1,0 +1,12 @@
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#fff8e1;color:#222;padding-bottom:80px}
+header{background:#c62828;color:#ffd600;text-align:center;padding:18px 10px}h1{margin:0;font-size:2rem}.sub{margin:2px 0;color:#fff;font-weight:600}.addr{margin:4px 0 0;color:#fff;font-size:.9rem}
+#tabs{position:sticky;top:0;display:flex;overflow-x:auto;gap:6px;padding:8px;background:#ffd600;z-index:5}#tabs a{white-space:nowrap;background:#c62828;color:#fff;padding:6px 12px;border-radius:20px;text-decoration:none;font-size:.85rem;font-weight:600}
+main{max-width:640px;margin:auto;padding:8px}h2.cat{color:#c62828;border-bottom:3px solid #ffd600;margin:18px 0 8px}.note{font-size:.85rem;color:#666;margin:-4px 0 8px}
+.item{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:10px;margin:6px 0;box-shadow:0 1px 3px #0002}
+.item h3{margin:0;font-size:1rem}.item p{margin:2px 0 0;font-size:.8rem;color:#555}.price{color:#c62828;font-weight:700;font-size:.95rem}
+.qty{display:flex;align-items:center;gap:6px}.qty button{width:34px;height:34px;border-radius:50%;border:0;background:#c62828;color:#fff;font-size:1.2rem;font-weight:700}.qty button.m{background:#ffd600;color:#c62828}.qty span{min-width:18px;text-align:center;font-weight:700}
+#bar{position:fixed;bottom:0;left:0;right:0;padding:10px}#bar button{width:100%;display:flex;justify-content:space-between;background:#c62828;color:#fff;border:0;border-radius:12px;padding:14px;font-size:1rem;font-weight:700}
+#drawer{position:fixed;inset:0;background:#0007;z-index:10;display:flex;align-items:flex-end}#drawer[hidden]{display:none}.panel{background:#fff;width:100%;max-height:90vh;overflow:auto;border-radius:16px 16px 0 0;padding:14px}
+.dh{display:flex;justify-content:space-between;align-items:center}.dh button{border:0;background:none;font-size:1.4rem}#cartList{list-style:none;padding:0}#cartList li{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #eee;font-size:.9rem}
+.total{font-size:1.1rem;text-align:right}label{display:block;font-size:.85rem;margin:8px 0}input,textarea,select{width:100%;padding:8px;border:1px solid #ccc;border-radius:8px;font:inherit}
+#finish{width:100%;margin-top:10px;background:#25d366;color:#fff;border:0;border-radius:12px;padding:14px;font-size:1rem;font-weight:700}
