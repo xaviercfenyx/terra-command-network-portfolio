@@ -3,214 +3,227 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nutripássaros — Catálogo digital 2025 (protótipo)</title>
-  <meta name="description" content="Protótipo de catálogo digital da Nutripássaros: alimentos para pássaros, roedores, cães e gatos, produtos veterinários, acessórios, jardinagem e aquarismo. Pedido pelo WhatsApp.">
+  <title>Nutripássaros — Catálogo digital de produtos</title>
+  <meta name="description" content="Catálogo digital Nutripássaros: alimentos para pássaros, roedores, cães e gatos, produtos veterinários, acessórios, jardinagem, sementes e aquarismo. Busque por nome ou código e envie o pedido pelo WhatsApp.">
+  <meta name="theme-color" content="#1c2e1d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nutripássaros — Catálogo digital de produtos">
+  <meta property="og:description" content="Catálogo digital Nutripássaros: alimentos para pássaros, roedores, cães e gatos, produtos veterinários, acessórios, jardinagem, sementes e aquarismo. Busque por nome ou código e envie o pedido pelo WhatsApp.">
+  <meta property="og:image" content="https://terra-command-network-portfolio.vercel.app/demo/nutripassaros/img/site/og-nutripassaros.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
-  <link rel="icon" href="img/logo.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 </head>
-<body>
+<body class="page-home">
   <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="site-header">
     <div class="header-inner">
       <a class="logo-link" href="index.html" aria-label="Nutripássaros — início">
-        <img src="img/logo.png" alt="Nutripássaros — alimento para pássaros">
+        <img src="img/logo.png" alt="Nutripássaros" width="154" height="56">
       </a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">Menu</button>
-      <nav class="site-nav" id="site-nav">
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
         <a href="#categorias">Categorias</a>
+        <a href="#destaques">Produtos</a>
         <a href="#historia">Nossa história</a>
-        <a href="#passaros">Pássaros</a>
-        <a href="#roedores">Roedores</a>
-        <a href="#caes-gatos">Cães e gatos</a>
-        <a href="#veterinarios">Veterinários</a>
-        <a href="catalogo.html">Catálogo</a>
+        <a href="#como-pedir">Como pedir</a>
+        <a href="catalogo.html">Catálogo completo</a>
       </nav>
-            <div class="header-actions">
-        <button class="icon-btn" type="button" data-open-cart aria-label="Abrir carrinho">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+        <label class="visually-hidden" for="busca-topo">Buscar no catálogo</label>
+        <input id="busca-topo" type="search" placeholder="Buscar produto ou código" data-search autocomplete="off" enterkeyhint="search">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-open-cart aria-label="Abrir pedido">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
           <span class="cart-count" data-cart-count>0</span>
         </button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
       </div>
-      <div class="search-wrap">
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <label class="visually-hidden" for="busca-topo">Buscar produtos</label>
-          <input id="busca-topo" type="search" placeholder="Buscar produtos" data-search autocomplete="off">
-        </div>
     </div>
   </header>
 
-  <section class="hero" style="background-image:url('img/hero.webp')">
-    <div class="hero-inner">
-      <p class="eyebrow">Catálogo 2025 · Protótipo digital</p>
-      <h1>Nutrição de qualidade desde 1998</h1>
-      <p class="lead">Alimentos para pássaros, roedores, cães e gatos, com distribuição de produtos veterinários em todo o Brasil. Peça direto com o representante pelo WhatsApp.</p>
-      <div class="hero-actions">
-        <a class="btn btn-whats" data-float-wa href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer">Fazer pedido pelo WhatsApp</a>
-        <a class="btn btn-ghost" href="catalogo.html">Ver catálogo completo</a>
-      </div>
-    </div>
-  </section>
-
   <main id="conteudo">
-    <section id="categorias">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Nossas categorias</h2>
-          <p class="muted">As mesmas seções do Catálogo Completo Nutripássaros 2025, agora com busca e pedido pelo celular.</p>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Desde 1998 · Fabricação própria</p>
+          <h1>Nutrição de qualidade para quem cuida de pássaros</h1>
+          <p class="lead">Alimentos para pássaros, roedores, cães e gatos, além da distribuição de produtos veterinários. Consulte o catálogo, monte seu pedido e envie direto ao representante pelo WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="catalogo.html">Abrir o catálogo</a>
+            <a class="btn btn-whats btn-lg" data-float-wa href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3.8.6.6-3.7-.2-.3A9 9 0 1 1 12 20.5zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-1 .9-.5 0-.8-.2a7.4 7.4 0 0 1-2.2-1.4 8 8 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.6l.5-.6.1-.3c0-.1 0-.2 0-.3s-.7-1.7-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/></svg> Falar no WhatsApp</a>
+          </div>
+          <ul class="hero-facts">
+            <li><strong>1998</strong><span>ano de fundação</span></li>
+            <li><strong>8</strong><span>categorias de produtos</span></li>
+            <li><strong>Brasil</strong><span>atendimento em todo o país</span></li>
+          </ul>
         </div>
-        <div class="tabela-banner" data-tabela-banner style="margin-bottom:18px"></div>
+        <div class="hero-media">
+          <img src="img/site/hero-canarios.webp" alt="Canários sobre um galho" width="1100" height="1100" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section id="categorias" class="section-cats">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Linhas de produtos</p>
+          <h2>Tudo o que sua loja precisa, em um só catálogo</h2>
+          <p class="muted">Escolha uma categoria para ver os produtos, códigos e embalagens disponíveis.</p>
+        </div>
         <div class="cat-grid" id="grade-categorias"></div>
       </div>
     </section>
 
-    <section class="historia" id="historia">
+    <div id="destaques" class="destaques">
       <div class="wrap">
-        <div class="grid-2">
-          <div>
-            <h2>Nossa história</h2>
-            <p>A Nutripássaros foi fundada em 1998 com o propósito de oferecer alimentos especializados para pássaros e roedores, focando em nutrição de qualidade e rigor nos processos de fabricação. Logo se destacou no mercado pet pela dedicação ao bem-estar desses animais, desenvolvendo produtos cuidadosamente formulados para atender suas necessidades nutricionais.</p>
-            <p>Com o crescimento e a diversificação das demandas do mercado, expandiu suas operações. Além da fabricação de alimentos para aves e roedores, passou a produzir também linhas para cães e gatos. Paralelamente, ingressou na distribuição de produtos veterinários, reforçando o compromisso com a saúde animal. Hoje, com mais de duas décadas de atuação, entrega qualidade a clientes em todo o Brasil.</p>
-          </div>
-          <div>
-            <h3>Missão e visão</h3>
-            <p>Promover o bem-estar e a saúde dos animais, fabricando alimentos de alta qualidade e distribuindo produtos veterinários confiáveis, com o compromisso de atender às necessidades nutricionais e de cuidados de cada espécie. Buscamos contribuir para uma vida saudável e plena de pássaros, roedores, cães e gatos, construindo relações de confiança com clientes e parceiros.</p>
-            <div class="valores" style="margin-top:18px">
-              <h3>Valores</h3>
-              <div class="valor"><strong>Excelência e qualidade</strong> Priorizamos o bem-estar animal e a inovação contínua para atender às necessidades nutricionais.</div>
-              <div class="valor"><strong>Ética e transparência</strong> Agimos com ética em todas as relações e buscamos práticas sustentáveis para reduzir o impacto ambiental.</div>
-              <div class="valor"><strong>Crescimento com respeito</strong> Comprometidos com o crescimento, mantemos o foco na qualidade e no respeito aos animais e clientes.</div>
-            </div>
-          </div>
-        </div>
+        <div class="tabela-banner" data-tabela-banner></div>
       </div>
-    </section>
 
     <section class="prod-section" id="passaros">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Pássaros</h2>
-          <p class="muted">Linha Super Premium, Linha Torneio, barrinhas, néctar e papinha — destaque do catálogo 2025.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
+        <div class="section-head row">
+          <div>
+            <h2>Pássaros</h2>
+            <p class="muted">Linha Super Premium e Linha Torneio, farinhadas, barrinhas, néctar e papinha.</p>
+          </div>
+          <a class="link-more" href="catalogo.html#passaros">Ver todos <span aria-hidden="true">→</span></a>
         </div>
-        <div class="prod-grid" data-cat-grid="passaros" data-featured="true"></div>
-        <p style="margin-top:20px"><a class="btn btn-outline" href="catalogo.html">Ver todos no catálogo</a></p>
+        <div class="prod-grid rail" data-cat-grid="passaros" data-featured="true"></div>
       </div>
     </section>
 
     <section class="prod-section" id="roedores">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Roedores</h2>
-          <p class="muted">Rações para hamster, chinchila e porquinho-da-índia, além de serragem.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
+        <div class="section-head row">
+          <div>
+            <h2>Roedores</h2>
+            <p class="muted">Rações para hamster, chinchila e coelho, além de serragens.</p>
+          </div>
+          <a class="link-more" href="catalogo.html#roedores">Ver todos <span aria-hidden="true">→</span></a>
         </div>
-        <div class="prod-grid" data-cat-grid="roedores" data-featured="true"></div>
-      </div>
-    </section>
-
-    <section class="prod-section" id="caes-gatos">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Cães e gatos</h2>
-          <p class="muted">Linhas Colosso Premium e Felismax, patês, molhos e petiscos Bifitos.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
-        </div>
-        <div class="prod-grid" data-cat-grid="caes-gatos" data-featured="true"></div>
-      </div>
-    </section>
-
-    <section class="prod-section" id="veterinarios">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Veterinários</h2>
-          <p class="muted">Cantolindo e Matacura, da distribuição de produtos veterinários da Nutripássaros.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
-        </div>
-        <div class="prod-grid" data-cat-grid="veterinarios" data-featured="true"></div>
-      </div>
-    </section>
-
-    <section class="prod-section" id="acessorios">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Acessórios</h2>
-          <p class="muted">Gaiolas, ninhos de madeira, seringas e serragem para psitacídeos.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
-        </div>
-        <div class="prod-grid" data-cat-grid="acessorios" data-featured="true"></div>
+        <div class="prod-grid rail" data-cat-grid="roedores" data-featured="true"></div>
       </div>
     </section>
 
     <section class="prod-section" id="jardinagem">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Jardinagem</h2>
-          <p class="muted">Mata-mato, mata-pulgão, adubos e linha Sempre Verde.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
+        <div class="section-head row">
+          <div>
+            <h2>Jardim e aquário</h2>
+            <p class="muted">Sempre Verde e Dipil para plantas e hortas; Alcon para peixes ornamentais.</p>
+          </div>
+          <a class="link-more" href="catalogo.html#jardinagem">Ver todos <span aria-hidden="true">→</span></a>
         </div>
-        <div class="prod-grid" data-cat-grid="jardinagem" data-featured="true"></div>
+        <div class="prod-grid rail" data-cat-grid="jardinagem,aquarismo" data-featured="true"></div>
       </div>
     </section>
 
-    <section class="prod-section" id="sementes">
+    <section class="prod-section" id="veterinarios">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Sementes de horta</h2>
-          <p class="muted">Envelopes de hortaliças para plantar em casa.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
+        <div class="section-head row">
+          <div>
+            <h2>Veterinários</h2>
+            <p class="muted">Cantolindo e Matacura, da distribuição veterinária Nutripássaros.</p>
+          </div>
+          <a class="link-more" href="catalogo.html#veterinarios">Ver todos <span aria-hidden="true">→</span></a>
         </div>
-        <div class="prod-grid" data-cat-grid="sementes" data-featured="true"></div>
+        <div class="prod-grid rail" data-cat-grid="veterinarios" data-featured="true"></div>
       </div>
     </section>
 
-    <section class="prod-section" id="aquarismo">
+    </div>
+
+    <section class="historia" id="historia">
+      <div class="wrap historia-grid">
+        <div class="historia-media">
+          <figure class="foto-a"><img src="img/site/fabrica-fachada.webp" alt="Fachada da fábrica Nutripássaros" loading="lazy" width="1200" height="800"></figure>
+          <figure class="foto-b"><img src="img/site/fabrica-galpao.webp" alt="Área interna da fábrica" loading="lazy" width="1200" height="800"></figure>
+        </div>
+        <div class="historia-texto">
+          <p class="eyebrow">Nossa história</p>
+          <h2>Mais de duas décadas dedicadas à nutrição animal</h2>
+          <p>A Nutripássaros foi fundada em 1998 com o propósito de oferecer alimentos especializados para pássaros e roedores, com foco em nutrição de qualidade e rigor nos processos de fabricação. Logo se destacou no mercado pet pela dedicação ao bem-estar desses animais.</p>
+          <p>Com o crescimento do mercado, ampliou a fabricação para linhas de cães e gatos e passou a distribuir produtos veterinários, reforçando o compromisso com a saúde animal. Hoje atende clientes em todo o Brasil.</p>
+        </div>
+      </div>
+      <div class="wrap valores-grid">
+        <article class="valor-card">
+          <h3>Missão</h3>
+          <p>Promover o bem-estar e a saúde dos animais, fabricando alimentos de alta qualidade e distribuindo produtos veterinários confiáveis.</p>
+        </article>
+        <article class="valor-card">
+          <h3>Excelência e qualidade</h3>
+          <p>Bem-estar animal e inovação contínua para atender às necessidades nutricionais de cada espécie.</p>
+        </article>
+        <article class="valor-card">
+          <h3>Ética e transparência</h3>
+          <p>Ética em todas as relações e busca por práticas sustentáveis que reduzam o impacto ambiental.</p>
+        </article>
+        <article class="valor-card">
+          <h3>Crescimento com respeito</h3>
+          <p>Crescer mantendo o foco na qualidade e no respeito aos animais, clientes e parceiros.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="como-pedir" class="como-pedir">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Aquarismo</h2>
-          <p class="muted">Alimentos Alcon para peixes ornamentais.</p>
-          <p class="note-preco">Preços ilustrativos — protótipo</p>
+        <div class="section-head center">
+          <p class="eyebrow">Como pedir</p>
+          <h2>Seu pedido em três passos</h2>
         </div>
-        <div class="prod-grid" data-cat-grid="aquarismo" data-featured="true"></div>
-        <p data-search-empty hidden class="no-results">Nenhum produto encontrado nesta busca.</p>
-      </div>
-    </section>
-
-    <section id="pedido">
-      <div class="wrap" style="text-align:center">
-        <h2 style="font-family:var(--fonte-titulo);color:var(--verde-900)">Como pedir</h2>
-        <p class="muted" style="max-width:42ch;margin:8px auto 20px">Monte o pedido neste protótipo ou chame o representante no WhatsApp. Não há pagamento online — o atendimento é direto com Francisco Ferre.</p>
-        <a class="btn btn-whats" href="https://wa.me/5511984871786?text=Ol%C3%A1%2C%20Francisco!%20Gostaria%20de%20fazer%20um%20pedido%20pelo%20cat%C3%A1logo%20digital%20da%20Nutrip%C3%A1ssaros." target="_blank" rel="noopener noreferrer">Fazer pedido pelo WhatsApp</a>
+        <ol class="passos">
+          <li><span class="passo-n">1</span><h3>Encontre os produtos</h3><p>Busque pelo nome ou pelo código do catálogo (ex.: 03050) e escolha a embalagem.</p></li>
+          <li><span class="passo-n">2</span><h3>Monte o pedido</h3><p>Ajuste as quantidades no carrinho e informe nome e cidade.</p></li>
+          <li><span class="passo-n">3</span><h3>Envie pelo WhatsApp</h3><p>A mensagem vai pronta para Francisco Ferre, que confirma preços, disponibilidade e entrega.</p></li>
+        </ol>
+        <div class="cta-final">
+          <div>
+            <h3>Prefere falar direto com o representante?</h3>
+            <p>Francisco Ferre · (11) 98487-1786</p>
+          </div>
+          <a class="btn btn-whats btn-lg" data-float-wa href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3.8.6.6-3.7-.2-.3A9 9 0 1 1 12 20.5zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-1 .9-.5 0-.8-.2a7.4 7.4 0 0 1-2.2-1.4 8 8 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.6l.5-.6.1-.3c0-.1 0-.2 0-.3s-.7-1.7-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5 1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/></svg> Conversar no WhatsApp</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <div>
-        <a class="logo-link" href="index.html"><img src="img/logo.png" alt="Nutripássaros"></a>
-        <p>Catálogo 2025. Protótipo de catálogo digital para consulta e pedido pelo WhatsApp.</p>
+      <div class="footer-brand">
+        <a class="logo-link" href="index.html"><img src="img/logo.png" alt="Nutripássaros" width="154" height="56" loading="lazy"></a>
+        <p>Alimentos para pássaros, roedores, cães e gatos e distribuição de produtos veterinários. Fundada em 1998.</p>
       </div>
       <div>
-        <h3>Contato</h3>
-        <p>Representante comercial: Francisco Ferre, (11) 98487-1786</p>
-        <p><a href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer">WhatsApp do representante</a></p>
+        <h3>Atendimento comercial</h3>
+        <p>Representante: <strong>Francisco Ferre</strong></p>
+        <p>(11) 98487-1786</p>
+        <p><a href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></p>
+      </div>
+      <div>
+        <h3>Nutripássaros</h3>
         <p><a href="https://www.nutripassaros.com.br" target="_blank" rel="noopener noreferrer">www.nutripassaros.com.br</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/nutripassaros" target="_blank" rel="noopener noreferrer">@nutripassaros</a></p>
+        <p><a href="https://www.instagram.com/nutripassaros" target="_blank" rel="noopener noreferrer">Instagram @nutripassaros</a></p>
       </div>
       <div>
         <h3>Navegação</h3>
         <p><a href="catalogo.html">Catálogo completo</a></p>
-        <p><a href="#categorias">Categorias</a></p>
-        <p><a href="#historia">Nossa história</a></p>
-        <p class="note-preco">Preços ilustrativos — protótipo</p>
+        <p><a href="index.html#historia">Nossa história</a></p>
+        <p><a href="index.html#como-pedir">Como pedir</a></p>
       </div>
     </div>
-    <div class="wrap">        <p class="footer-meta"><a class="acesso-rep" href="painel/index.html">Acesso do representante</a> · Desenvolvido por <a href="sobre/index.html">Terra Command Network</a></p>
-      <p class="fine">Este é um protótipo de demonstração. Os preços são ilustrativos e nenhum pagamento é processado nesta página. Conteúdo baseado no Catálogo Completo Nutripássaros 2025.</p></div>
+    <div class="wrap footer-bottom">
+      <p class="fine">Protótipo independente de catálogo digital, não oficial e não aprovado pela Nutripássaros. Fotos, códigos e pesos conforme o catálogo da empresa; preços exibidos são apenas demonstrativos e nenhum pagamento é processado neste site. Pedido e preços finais são confirmados pelo representante.</p>
+      <p class="footer-meta"><a class="acesso-rep" href="painel/index.html">Acesso do representante (demo)</a> · Desenvolvido por <a href="sobre/index.html">Terra Command Network</a></p>
+    </div>
   </footer>
 
   <a class="float-wa" data-float-wa href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer" aria-label="Fazer pedido pelo WhatsApp">
@@ -219,55 +232,65 @@
 
   <div class="overlay" id="overlay"></div>
 
+  <div class="cart-bar" data-cart-bar hidden>
+    <span data-cart-bar-text>0 itens no pedido</span>
+    <button class="btn btn-gold btn-sm" type="button" data-open-cart>Ver pedido</button>
+  </div>
+
   <aside class="drawer" id="carrinho" aria-hidden="true" aria-labelledby="carrinho-titulo" role="dialog">
     <div class="drawer-head">
       <h2 id="carrinho-titulo">Seu pedido</h2>
-      <button class="close-x" type="button" data-close-cart aria-label="Fechar">×</button>
+      <button class="close-x" type="button" data-close-cart aria-label="Fechar pedido">×</button>
     </div>
     <div class="drawer-body" data-cart-body></div>
     <div class="drawer-foot" data-cart-foot hidden>
       <p class="minimo-aviso" data-minimo-aviso hidden></p>
-      <div class="subtotal"><span>Subtotal</span><span data-cart-total>R$ 0,00</span></div>
-      <p class="note-preco" style="margin-bottom:12px">Preços ilustrativos — protótipo</p>
-      <a class="btn btn-whats btn-block" data-wa-cart href="https://wa.me/5511984871786" target="_blank" rel="noopener noreferrer">Enviar pedido pelo WhatsApp</a>
-      <button class="btn btn-gold btn-block" type="button" data-checkout style="margin-top:8px">Finalizar pedido (demonstração)</button>
+      <div class="subtotal" data-cart-total-row hidden><span>Total</span><span data-cart-total></span></div>
+      <p class="fine" data-cart-nota style="margin:0 0 12px"></p>
+      <button class="btn btn-whats btn-block" type="button" data-checkout>Continuar: dados e envio pelo WhatsApp</button>
+      <button class="link-btn" type="button" data-clear-cart style="margin-top:10px">Esvaziar pedido</button>
     </div>
   </aside>
 
+  <div class="modal" id="detalhe" aria-hidden="true" role="dialog" aria-labelledby="detalhe-titulo">
+    <div class="modal-card modal-wide">
+      <button class="close-x" type="button" data-close-modal aria-label="Fechar detalhes">×</button>
+      <div data-detalhe-body></div>
+    </div>
+  </div>
+
   <div class="modal" id="checkout" aria-hidden="true" role="dialog" aria-labelledby="checkout-titulo">
     <div class="modal-card">
-      <button class="close-x" type="button" data-close-modal aria-label="Fechar" style="position:absolute;right:12px;top:8px">×</button>
-      <form id="form-checkout">
-        <h2 id="checkout-titulo">Finalizar pedido</h2>
-        <p class="muted">Checkout de demonstração — nenhum pagamento é cobrado. Não pedimos dados de cartão.</p>
-        <div class="form-row">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label for="telefone">Telefone</label>
-          <input id="telefone" name="telefone" type="tel" autocomplete="tel">
-        </div>
-        <div class="form-row">
-          <label for="cidade">Cidade</label>
-          <input id="cidade" name="cidade" type="text" autocomplete="address-level2">
-        </div>
-        <div class="form-row">
-          <label for="obs">Observações</label>
-          <textarea id="obs" name="obs" rows="3"></textarea>
-        </div>
-        <button class="btn btn-gold btn-block" type="submit">Confirmar pedido de demonstração</button>
+      <button class="close-x" type="button" data-close-modal aria-label="Fechar">×</button>
+      <form id="form-checkout" novalidate>
+        <h2 id="checkout-titulo">Dados para o pedido</h2>
+        <p class="muted small">O pedido é enviado pelo seu WhatsApp ao representante <strong>Francisco Ferre</strong>. Não há pagamento neste site e não pedimos dados de cartão.</p>
+        <div class="form-row"><label for="nome">Seu nome *</label><input id="nome" name="nome" type="text" autocomplete="name" required></div>
+        <div class="form-row"><label for="loja">Loja / razão social</label><input id="loja" name="loja" type="text" autocomplete="organization"></div>
+        <div class="form-row"><label for="cnpj">CNPJ <span class="muted">(opcional)</span></label><input id="cnpj" name="cnpj" type="text" inputmode="numeric" autocomplete="off"></div>
+        <div class="form-row"><label for="cidade">Cidade *</label><input id="cidade" name="cidade" type="text" autocomplete="address-level2" required></div>
+        <div class="form-row"><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" autocomplete="tel"></div>
+        <div class="form-row"><label for="obs">Observações</label><textarea id="obs" name="obs" rows="2"></textarea></div>
+        <p class="form-erro" data-form-erro role="alert" hidden></p>
+        <button class="btn btn-gold btn-block" type="submit">Ver mensagem do pedido</button>
       </form>
+      <div id="checkout-preview" hidden>
+        <h2>Confira a mensagem</h2>
+        <p class="muted small">Ao tocar em “Abrir no WhatsApp”, a mensagem abaixo vai pronta para o representante. Você ainda pode editar no WhatsApp antes de enviar.</p>
+        <pre class="msg-preview" data-msg></pre>
+        <a class="btn btn-whats btn-block" data-wa-send href="#" target="_blank" rel="noopener noreferrer">Abrir no WhatsApp</a>
+        <button class="btn btn-outline btn-block" type="button" data-voltar-form style="margin-top:8px">Voltar e editar dados</button>
+      </div>
       <div id="checkout-ok" class="confirm-box" hidden>
-        <h3>Pedido de demonstração — nenhum pagamento real</h3>
-        <p data-ok-text></p>
+        <h3>Mensagem aberta no WhatsApp</h3>
+        <p>Envie a mensagem no WhatsApp para concluir. O representante confirma preços, disponibilidade e entrega. Nenhum pagamento foi feito neste site.</p>
         <button class="btn btn-outline" type="button" data-close-modal style="margin-top:12px">Fechar</button>
       </div>
     </div>
   </div>
 
-  <script src="js/produtos.js"></script>
-  <script src="js/store.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/produtos.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

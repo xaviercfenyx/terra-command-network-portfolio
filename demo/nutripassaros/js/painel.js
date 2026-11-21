@@ -2,7 +2,7 @@
 
 function $(sel, root) { return (root || document).querySelector(sel); }
 function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
-function fmt(v) { return (Number(v) || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function fmt(v) { if (v === null || v === undefined || v === "" || isNaN(Number(v))) return "—"; return Number(v).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
 function esc(s) {
   return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
@@ -20,42 +20,10 @@ function showLogin(show) {
   $("#tela-app").hidden = show;
 }
 
-function refreshTrialBadge() {
-  const store = getStore();
-  const left = trialRestantes(store.trial);
-  $$("[data-trial-badge]").forEach((el) => {
-    if (store.trial && left > 0) {
-      el.textContent = "Teste · " + left + " dia" + (left === 1 ? "" : "s") + " restante" + (left === 1 ? "" : "s");
-      el.classList.add("is-on");
-    } else if (store.trial && left <= 0) {
-      el.textContent = "Teste encerrado (demonstração)";
-      el.classList.add("is-on");
-    } else {
-      el.classList.remove("is-on");
-    }
-  });
-}
-
-function openTrial() {
-  $("#trial-form-wrap").hidden = false;
-  $("#trial-ok").hidden = true;
-  $("#modal-trial").classList.add("is-on");
-  const f = $("#form-trial");
-  if (f && getSession()) {
-    f.nome.value = getSession().nome || "";
-    f.email.value = getSession().email || DEMO_USER.email;
-  }
-}
-
-function closeTrial() {
-  $("#modal-trial").classList.remove("is-on");
-}
-
 function enterApp() {
   showLogin(false);
   const store = getStore();
   applyTema(store.tema || "light");
-  refreshTrialBadge();
   navigate(view || "dashboard");
 }
 
@@ -134,7 +102,7 @@ function renderProdutos(el) {
     '<div class="page-title"><div><h2>Produtos</h2><p>' + s.produtos.length + " itens no catálogo. Edições aparecem no catálogo deste navegador.</p></div>" +
     '<button class="btn btn-primary" type="button" data-new-prod>Novo produto</button></div>' +
     '<div class="toolbar"><input type="search" data-psearch placeholder="Buscar nome ou código" value="' + esc(q) + '"><select data-pcat>' + catOpts + "</select></div>" +
-    '<div class="panel" style="overflow:auto"><table><thead><tr><th></th><th>Código</th><th>Produto</th><th>Categoria</th><th>Embalagem</th><th>Preço base</th><th></th><th></th></tr></thead><tbody>' +
+    '<div class="panel" style="overflow:auto"><table><thead><tr><th></th><th>Código</th><th>Produto</th><th>Categoria</th><th>Embalagem</th><th>Preço demonstrativo</th><th></th><th></th></tr></thead><tbody>' +
     list.map((p) => {
       return "<tr>" +
         '<td><img class="thumb" src="' + assetUrl(p.imagem) + '" alt=""></td>' +
@@ -142,7 +110,7 @@ function renderProdutos(el) {
         "<td><strong>" + esc(p.nome) + "</strong>" + (p.esgotado ? ' <span class="badge-demo">Esgotado</span>' : "") + (p.featured ? ' <span class="badge-demo">Destaque</span>' : "") + "</td>" +
         "<td>" + esc((s.categorias.find((c) => c.id === p.categoria) || {}).nome || p.categoria) + "</td>" +
         "<td>" + esc(p.peso || "—") + "</td>" +
-        "<td>" + fmt(p.preco) + "</td>" +
+        "<td>" + fmt(p.preco) + ((p.variacoes || []).length > 1 ? '<br><small style="opacity:.75">' + p.variacoes.map((v) => esc(v.peso) + " " + fmt(precoVariacao(p, v.codigo, null))).join(" · ") + "</small>" : "") + "</td>" +
         '<td class="row-actions"><button class="btn btn-ghost btn-sm" data-edit="' + p.id + '">Editar</button></td>' +
         '<td><button class="btn btn-danger btn-sm" data-del="' + p.id + '">Excluir</button></td>' +
       "</tr>";
@@ -535,10 +503,10 @@ function renderQR(el) {
       '<div class="card-' + fmt + '">' +
         '<img src="../img/logo.png" alt="Nutripássaros" style="height:64px;margin:0 auto 12px">' +
         "<h2 style='font-family:Georgia,serif;margin:0 0 8px'>Escaneie e faça seu pedido</h2>" +
-        "<p>Catálogo digital Nutripássaros 2025 · Representante Francisco Ferre</p>" +
+        "<p>Catálogo digital Nutripássaros · Representante Francisco Ferre</p>" +
         '<div style="width:200px;margin:16px auto">' + svg + "</div>" +
         '<p style="font-size:12px;word-break:break-all">' + esc(url) + "</p>" +
-        '<p style="font-size:11px;opacity:.7">Demonstração — Catálogo 2025</p>' +
+        '<p style="font-size:11px;opacity:.7">Demonstração — catálogo digital</p>' +
       "</div>";
     window.print();
   });
@@ -548,15 +516,6 @@ function renderQR(el) {
 document.addEventListener("click", (ev) => {
   const viewBtn = ev.target.closest("[data-view]");
   if (viewBtn) { navigate(viewBtn.getAttribute("data-view")); return; }
-  if (ev.target.closest("[data-open-trial]")) { openTrial(); return; }
-  if (ev.target.closest("[data-close-trial]")) {
-    closeTrial();
-    if (ev.target.closest("[data-enter-after-trial]") && !getSession()) {
-      setSession({ email: DEMO_USER.email, nome: (getStore().trial && getStore().trial.nome) || DEMO_USER.nome });
-      enterApp();
-    }
-    return;
-  }
   if (ev.target.closest("[data-toggle-side]")) { $("#sidebar").classList.toggle("is-open"); return; }
   if (ev.target.closest("[data-toggle-tema]")) {
     applyTema(document.documentElement.getAttribute("data-tema") === "dark" ? "light" : "dark");
@@ -628,56 +587,15 @@ $("#form-login").addEventListener("submit", (ev) => {
   }
 });
 
-$("#form-trial").addEventListener("submit", (ev) => {
-  ev.preventDefault();
-  const f = ev.target;
-  updateStore((s) => {
-    s.trial = {
-      nome: f.nome.value.trim(),
-      loja: f.loja.value.trim(),
-      whatsapp: f.whatsapp.value.trim(),
-      email: f.email.value.trim(),
-      ativadoEm: new Date().toISOString(),
-      dias: 7
-    };
-  });
-  $("#trial-form-wrap").hidden = true;
-  $("#trial-ok").hidden = false;
-  refreshTrialBadge();
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const store = getStore();
   applyTema(store.tema || "light");
-  refreshTrialBadge();
   const params = new URLSearchParams(location.search);
   if (params.get("entrar") === "demo") {
     setSession({ email: DEMO_USER.email, nome: DEMO_USER.nome });
   }
   const hash = (location.hash || "").replace(/^#/, "");
   if (hash && hash !== "login") view = hash;
-  if (params.get("trial") === "ativado" || params.get("trial") === "badge") {
-    updateStore((s) => {
-      if (!s.trial) {
-        s.trial = {
-          nome: "Francisco Ferre",
-          loja: "Pet Shop Demonstração",
-          whatsapp: "(11) 98487-1786",
-          email: "francisco@demo",
-          ativadoEm: new Date().toISOString(),
-          dias: 7
-        };
-      }
-    });
-  }
   if (getSession()) enterApp();
   else showLogin(true);
-  if (params.get("trial") === "ativado") {
-    openTrial();
-    $("#trial-form-wrap").hidden = true;
-    $("#trial-ok").hidden = false;
-    refreshTrialBadge();
-  } else if (params.get("trial") === "1") {
-    openTrial();
-  }
 });

@@ -1,3 +1,4 @@
+[hidden] { display: none !important; }
 :root {
   --bg: #f4f1ea;
   --bg-2: #fffdf8;
@@ -242,3 +243,18 @@ th { font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color:
   .grid-2 { grid-template-columns: 1.2fr .8fr; }
   .content { padding: 24px 28px 64px; }
 }
+
+/* v4: ajustes de celular */
+.kpi strong { display: block; line-height: 1.15; }
+.kpi em { display: block; margin-top: 2px; }
+.topbar .btn-sm, .topbar .side-toggle { min-height: 44px; }
+@media (max-width: 559px) {
+  .topbar { gap: 6px; padding-left: 10px; padding-right: 10px; }
+  .topbar .logo-mini { height: 28px; }
+  .topbar .badge-demo { font-size: 10px; padding: 3px 7px; letter-spacing: .04em; }
+  .topbar .btn-sm, .topbar .side-toggle { padding-left: 10px; padding-right: 10px; }
+}
+@media (max-width: 419px) {
+  .topbar .logo-mini { display: none; }
+}
+td img.thumb { min-width: 44px; width: 44px; height: 44px; object-fit: contain; }

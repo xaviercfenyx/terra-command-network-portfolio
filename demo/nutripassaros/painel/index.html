@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/painel.css">
-  <link rel="icon" href="../img/logo.png">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 </head>
 <body>
   <!-- LOGIN -->
   <div id="tela-login" class="login-shell">
-    <aside class="login-brand" style="background-image:url('../img/hero.webp')">
+    <aside class="login-brand" style="background-image:url('../img/site/hero-canarios-wide.webp')">
       <div class="copy">
         <span class="badge-demo">Demonstração</span>
         <h2>O catálogo e o pedido, no mesmo lugar.</h2>
@@ -31,6 +32,7 @@
           <strong>Credenciais de demonstração</strong><br>
           E-mail: francisco@demo<br>
           Senha: demo123
+          <p class="sub" style="margin:8px 0 0">Login fictício, apenas para demonstração. Não é uma área segura: os dados ficam somente neste navegador (localStorage), que não é um banco de dados.</p>
         </div>
         <div class="field">
           <label for="login-email">E-mail</label>
@@ -43,7 +45,6 @@
         <p class="login-error" id="login-erro" role="alert"></p>
         <div class="login-actions">
           <button class="btn btn-primary btn-block" type="submit">Entrar</button>
-          <button class="btn btn-gold btn-block" type="button" data-open-trial>Teste grátis por 7 dias</button>
         </div>
         <p class="sub" style="margin-top:16px"><a href="../index.html">Voltar ao catálogo</a></p>
       </form>
@@ -56,9 +57,7 @@
       <button class="side-toggle" type="button" data-toggle-side aria-label="Abrir menu">Menu</button>
       <img class="logo-mini" src="../img/logo.png" alt="Nutripássaros">
       <span class="badge-demo">Demonstração</span>
-      <span class="trial-badge" data-trial-badge></span>
       <span class="spacer"></span>
-      <button class="btn btn-gold btn-sm" type="button" data-open-trial>Teste grátis por 7 dias</button>
       <button class="btn btn-ghost btn-sm" type="button" data-toggle-tema aria-label="Alternar tema">Tema</button>
       <button class="btn btn-ghost btn-sm" type="button" data-logout>Sair</button>
     </header>
@@ -73,38 +72,10 @@
         <button class="nav-btn" type="button" data-view="pedidos">Pedidos</button>
         <button class="nav-btn" type="button" data-view="qr">QR do catálogo</button>
         <div class="side-foot">
-          <button class="btn btn-gold btn-block" type="button" data-open-trial>Teste grátis por 7 dias</button>
           <a class="btn btn-ghost btn-block" href="../catalogo.html">Abrir catálogo</a>
         </div>
       </aside>
       <main class="content" id="conteudo"></main>
-    </div>
-  </div>
-
-  <!-- Trial modal -->
-  <div class="modal-back" id="modal-trial">
-    <div class="modal" role="dialog" aria-labelledby="trial-titulo">
-      <div id="trial-form-wrap">
-        <p><span class="badge-demo">Demonstração</span></p>
-        <h3 id="trial-titulo">Teste grátis por 7 dias</h3>
-        <p>Simulação de cadastro — nenhum pagamento é pedido e nada é cobrado. Os dados ficam só neste navegador.</p>
-        <form id="form-trial">
-          <div class="field"><label for="tr-nome">Nome</label><input id="tr-nome" name="nome" required></div>
-          <div class="field"><label for="tr-loja">Loja</label><input id="tr-loja" name="loja" required></div>
-          <div class="field"><label for="tr-wa">WhatsApp</label><input id="tr-wa" name="whatsapp" type="tel" required></div>
-          <div class="field"><label for="tr-email">E-mail</label><input id="tr-email" name="email" type="email" required></div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn btn-gold" type="submit">Ativar teste (demonstração)</button>
-            <button class="btn btn-ghost" type="button" data-close-trial>Cancelar</button>
-          </div>
-        </form>
-      </div>
-      <div id="trial-ok" class="activation" hidden>
-        <p><span class="badge-demo">Demonstração</span></p>
-        <h3>Teste ativado — 7 dias restantes</h3>
-        <p>Este é um ambiente de demonstração. O prazo aparece no topo do painel e não há cobrança real.</p>
-        <button class="btn btn-primary" type="button" data-close-trial data-enter-after-trial>Entrar no painel</button>
-      </div>
     </div>
   </div>
 
