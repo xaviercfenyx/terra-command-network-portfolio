@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel do representante — Nutripássaros (demonstração)</title>
+  <meta name="description" content="Painel de demonstração do representante Francisco Ferre: produtos, pedidos, tabelas B2B e QR do catálogo Nutripássaros.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="icon" href="../img/logo.png">
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="tela-login" class="login-shell">
+    <aside class="login-brand" style="background-image:url('../img/hero.webp')">
+      <div class="copy">
+        <span class="badge-demo">Demonstração</span>
+        <h2>O catálogo e o pedido, no mesmo lugar.</h2>
+        <p>Painel de exemplo para o representante comercial Francisco Ferre — Nutripássaros.</p>
+      </div>
+    </aside>
+    <div class="login-form-wrap">
+      <form class="login-card" id="form-login">
+        <img class="logo" src="../img/logo.png" alt="Nutripássaros">
+        <p style="text-align:center;margin:0 0 8px"><span class="badge-demo">Demonstração</span></p>
+        <h1>Acesso do representante</h1>
+        <p class="sub">Entre para ver o painel de exemplo. Nada é enviado a um servidor.</p>
+        <div class="cred-hint">
+          <strong>Credenciais de demonstração</strong><br>
+          E-mail: francisco@demo<br>
+          Senha: demo123
+        </div>
+        <div class="field">
+          <label for="login-email">E-mail</label>
+          <input id="login-email" name="email" type="text" value="francisco@demo" autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="login-senha">Senha</label>
+          <input id="login-senha" name="senha" type="password" value="demo123" autocomplete="current-password">
+        </div>
+        <p class="login-error" id="login-erro" role="alert"></p>
+        <div class="login-actions">
+          <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+          <button class="btn btn-gold btn-block" type="button" data-open-trial>Teste grátis por 7 dias</button>
+        </div>
+        <p class="sub" style="margin-top:16px"><a href="../index.html">Voltar ao catálogo</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="tela-app" class="app" hidden>
+    <header class="topbar">
+      <button class="side-toggle" type="button" data-toggle-side aria-label="Abrir menu">Menu</button>
+      <img class="logo-mini" src="../img/logo.png" alt="Nutripássaros">
+      <span class="badge-demo">Demonstração</span>
+      <span class="trial-badge" data-trial-badge></span>
+      <span class="spacer"></span>
+      <button class="btn btn-gold btn-sm" type="button" data-open-trial>Teste grátis por 7 dias</button>
+      <button class="btn btn-ghost btn-sm" type="button" data-toggle-tema aria-label="Alternar tema">Tema</button>
+      <button class="btn btn-ghost btn-sm" type="button" data-logout>Sair</button>
+    </header>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <button class="nav-btn is-on" type="button" data-view="dashboard">Painel</button>
+        <button class="nav-btn" type="button" data-view="produtos">Produtos</button>
+        <button class="nav-btn" type="button" data-view="categorias">Categorias</button>
+        <button class="nav-btn" type="button" data-view="importar">Importar planilha</button>
+        <button class="nav-btn" type="button" data-view="tabelas">Tabelas de preço</button>
+        <button class="nav-btn" type="button" data-view="clientes">Clientes</button>
+        <button class="nav-btn" type="button" data-view="pedidos">Pedidos</button>
+        <button class="nav-btn" type="button" data-view="qr">QR do catálogo</button>
+        <div class="side-foot">
+          <button class="btn btn-gold btn-block" type="button" data-open-trial>Teste grátis por 7 dias</button>
+          <a class="btn btn-ghost btn-block" href="../catalogo.html">Abrir catálogo</a>
+        </div>
+      </aside>
+      <main class="content" id="conteudo"></main>
+    </div>
+  </div>
+
+  <!-- Trial modal -->
+  <div class="modal-back" id="modal-trial">
+    <div class="modal" role="dialog" aria-labelledby="trial-titulo">
+      <div id="trial-form-wrap">
+        <p><span class="badge-demo">Demonstração</span></p>
+        <h3 id="trial-titulo">Teste grátis por 7 dias</h3>
+        <p>Simulação de cadastro — nenhum pagamento é pedido e nada é cobrado. Os dados ficam só neste navegador.</p>
+        <form id="form-trial">
+          <div class="field"><label for="tr-nome">Nome</label><input id="tr-nome" name="nome" required></div>
+          <div class="field"><label for="tr-loja">Loja</label><input id="tr-loja" name="loja" required></div>
+          <div class="field"><label for="tr-wa">WhatsApp</label><input id="tr-wa" name="whatsapp" type="tel" required></div>
+          <div class="field"><label for="tr-email">E-mail</label><input id="tr-email" name="email" type="email" required></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-gold" type="submit">Ativar teste (demonstração)</button>
+            <button class="btn btn-ghost" type="button" data-close-trial>Cancelar</button>
+          </div>
+        </form>
+      </div>
+      <div id="trial-ok" class="activation" hidden>
+        <p><span class="badge-demo">Demonstração</span></p>
+        <h3>Teste ativado — 7 dias restantes</h3>
+        <p>Este é um ambiente de demonstração. O prazo aparece no topo do painel e não há cobrança real.</p>
+        <button class="btn btn-primary" type="button" data-close-trial data-enter-after-trial>Entrar no painel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="print-sheet" id="print-sheet"></div>
+
+  <script src="../js/produtos.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/qrcode.min.js"></script>
+  <script src="../js/painel.js"></script>
+</body>
+</html>

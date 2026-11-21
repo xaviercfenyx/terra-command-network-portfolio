@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terra Command Network — identidade, venda e sistemas digitais</title>
+  <meta name="description" content="A Terra Command Network cria identidade visual, facilita a venda e a comunicação com clientes, constrói marcas respeitadas e desenvolve sistemas digitais para PC e celular.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/sobre.css">
+</head>
+<body>
+  <header>
+    <a class="wordmark" href="index.html">Terra Command Network</a>
+    <nav>
+      <a href="#o-que-fazemos">O que fazemos</a>
+      <a href="#contato">Contato</a>
+      <a href="../index.html">Ver o protótipo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Terra Command Network</p>
+        <h1>Identidade que se vê, venda que flui, marca que se respeita.</h1>
+        <p class="lead">Criamos a cara da sua empresa, deixamos a venda mais fácil e aproximamos você de quem já é — ou pode ser — seu cliente. Também construímos o digital inteiro, do catálogo ao sistema de gestão, para usar no computador ou no celular.</p>
+      </div>
+    </section>
+
+    <section id="o-que-fazemos">
+      <div class="wrap grid">
+        <article class="card">
+          <h2>Identidade visual</h2>
+          <p>Damos forma à marca: o jeito como ela aparece, fala e é reconhecida — no papel, no celular e no ponto de venda.</p>
+        </article>
+        <article class="card">
+          <h2>Venda mais simples</h2>
+          <p>Tiramos atrito do caminho entre o produto e o pedido: catálogo digital, busca, carrinho e conversa direta com o cliente.</p>
+        </article>
+        <article class="card">
+          <h2>Comunicação com o cliente</h2>
+          <p>Facilitamos o diálogo no canal que a pessoa já usa, com pedidos claros e um atendimento que não se perde no meio do caminho.</p>
+        </article>
+        <article class="card">
+          <h2>Marcas respeitadas</h2>
+          <p>Trabalhamos para que a empresa seja lembrada com consistência e cuidado — não só com um logotipo, mas com uma presença inteira.</p>
+        </article>
+        <article class="card">
+          <h2>Qualquer coisa digital</h2>
+          <p>Sites, catálogos, painéis e sistemas de gestão: estoque, vendas, fornecedores e cadastro de clientes, inclusive com identificação automática pelo WhatsApp.</p>
+        </article>
+        <article class="card">
+          <h2>No PC e no telefone</h2>
+          <p>Tudo pensado para ser usado na mesa de trabalho ou na palma da mão, sem depender de uma única tela ou de um único lugar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="wrap">
+        <h2>Vamos conversar</h2>
+        <p>Se você quer uma identidade mais clara, um jeito mais simples de vender ou um sistema para cuidar da operação, fale com a gente. Este formulário faz parte do protótipo: a mensagem fica neste navegador e, no projeto em produção, chegaria à nossa equipe.</p>
+        <form id="contato-form">
+          <div>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" required>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" name="msg" rows="5" required></textarea>
+          </div>
+          <button type="submit">Enviar mensagem</button>
+          <p class="note">Não pedimos cartão nem pagamento. Este é um convite para conversar.</p>
+        </form>
+        <div class="ok" id="contato-ok">
+          <p>Mensagem registrada neste protótipo. Obrigado pelo interesse — no projeto em produção, ela seguiria para a equipe da Terra Command Network.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Terra Command Network. <a href="../index.html">Voltar ao protótipo Nutripássaros</a>.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("contato-form").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      ev.target.hidden = true;
+      document.getElementById("contato-ok").classList.add("is-on");
+    });
+  </script>
+</body>
+</html>
