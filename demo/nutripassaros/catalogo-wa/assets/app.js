@@ -31,10 +31,25 @@ const STORAGE_KEY = 'np_pedido_v1';
     ['Medicamentos Veterinários', '#b0343a', '#f5c2c4', '<rect x="16" y="26" width="32" height="12" rx="6" fill="#fff"/><rect x="28" y="14" width="8" height="36" rx="3" fill="#fff" opacity=".55"/><path d="M32 22v20M22 32h20" stroke="#b0343a" stroke-width="0"/><path d="M29 29h6M32 26v6" stroke="#b0343a" stroke-width="2.5" stroke-linecap="round"/>']
   ];
   const CAT_MAP = new Map(CATS.map(c => [c[0], c]));
-  function thumbHTML(cat) {
+  function phHTML(cat) {
     const c = CAT_MAP.get(cat) || ['', '#2e6b3d', '#cfe3d4', ''];
-    return `<div class="thumb" style="background:linear-gradient(135deg,${c[1]} 0%,${c[1]}cc 55%,${c[2]} 140%)"><svg viewBox="0 0 64 64" aria-hidden="true">${c[3]}</svg><span class="cat-tag">${esc(cat)}</span></div>`;
+    return `<div class="ph" style="background:linear-gradient(135deg,${c[1]} 0%,${c[1]}cc 55%,${c[2]} 140%)"><svg viewBox="0 0 64 64" aria-hidden="true">${c[3]}</svg><span class="ph-txt">Foto indisponível</span></div>`;
   }
+  function thumbHTML(p) {
+    const cat = p.category;
+    const tag = `<span class="cat-tag">${esc(cat)}</span>`;
+    if (!p.image) return `<div class="thumb no-img">${phHTML(cat)}${tag}</div>`;
+    const small = p.image.replace(/\.webp$/, '-300.webp');
+    return `<div class="thumb"><img src="${esc(p.image)}" srcset="${esc(small)} 300w, ${esc(p.image)} 600w" sizes="(min-width:900px) 160px, 104px" width="600" height="600" loading="lazy" decoding="async" alt="${esc(p.name + (p.packaging ? ' – ' + p.packaging : ''))}">${tag}</div>`;
+  }
+  /* foto que falhar ao carregar vira o placeholder da categoria */
+  document.addEventListener('error', e => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement) || !img.closest('.thumb')) return;
+    const th = img.closest('.thumb'); const card = img.closest('.card');
+    const p = card && PRODUCTS.find(x => x.id === card.dataset.id);
+    img.remove(); th.classList.add('no-img'); th.insertAdjacentHTML('afterbegin', phHTML(p ? p.category : ''));
+  }, true);
   function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); }
 
   /* ---------- índice de busca ---------- */
@@ -88,7 +103,7 @@ const STORAGE_KEY = 'np_pedido_v1';
   function cardHTML(p) {
     const inCart = cart.items[p.id];
     return `<article class="card" data-id="${p.id}">
-      ${thumbHTML(p.category)}
+      ${thumbHTML(p)}
       <div class="card-body">
         <span class="code ${p.code ? '' : 'nocode'}" title="Código do produto">${p.code ? 'Cód. ' + esc(p.code) : 'Sem código'}</span>
         <h3 class="pname">${esc(p.name)}</h3>

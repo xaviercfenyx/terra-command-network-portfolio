@@ -39,6 +39,14 @@ Atualizar produtos
 - Edite products.json e gere de novo o assets/products.js com:
     python3 -c "import json;d=json.load(open('products.json'));open('assets/products.js','w').write('window.NP_PRODUCTS='+json.dumps(d,ensure_ascii=False)+';')"
 
-Imagens
-- Não há fotos de produtos: os cards usam ilustrações por categoria
-  (as fotos do PDF não ficam alinhadas aos códigos em várias páginas).
+Imagens (fotos dos produtos)
+- assets/img/<id>.webp (600x600, fundo branco, WebP q80, <=40 KB) e
+  assets/img/<id>-300.webp (versão menor para celular, via srcset).
+- Campo "image" em products.json / assets/products.js; null = sem foto.
+- 1.324 produtos com foto (1.316 recortadas do próprio PDF do catálogo e
+  8 de fotos oficiais/varejo do produto exato); 13 sem foto confiável usam
+  a ilustração da categoria com "Foto indisponível".
+- Fotos com loading="lazy": só carregam quando o card chega perto da tela.
+  Se um arquivo faltar/der erro, o card volta para a ilustração da categoria.
+- Para trocar uma foto: substitua os dois arquivos .webp do produto (mesmo
+  nome) ou aponte o campo "image" para outro arquivo e regenere products.js.
