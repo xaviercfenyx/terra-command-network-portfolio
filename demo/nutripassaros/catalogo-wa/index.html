@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catálogo Nutripássaros 2025 – Pedido pelo WhatsApp</title>
+<meta name="description" content="Catálogo digital Nutripássaros: pássaros, cães e gatos, roedores, aquarismo, pets, jardinagem e medicamentos veterinários. Monte sua lista e envie pelo WhatsApp.">
+<meta name="theme-color" content="#1f4d2b">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231f4d2b'/%3E%3Cpath d='M20 38c4-12 14-18 26-16-4 3-6 6-7 10 5 0 8 2 10 5-9 3-20 4-29 1z' fill='%23f4c430'/%3E%3C/svg%3E">
+</head>
+<body>
+<div class="demo-banner" role="note">
+  <strong>Preços demonstrativos.</strong> Os valores exibidos são fictícios, apenas para demonstração. Preço e disponibilidade são confirmados pelo representante no WhatsApp.
+</div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Nutripássaros – início">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#1f4d2b"/><path d="M18 39c4-13 15-19 28-17-4 3-6 6-7 10 5 0 8 2 10 5-10 3-21 4-31 2z" fill="#f4c430"/><circle cx="41" cy="27" r="1.8" fill="#1f4d2b"/></svg>
+      <span><b>Nutripássaros</b><small>Catálogo 2025 · desde 1998</small></span>
+    </a>
+    <nav class="header-links">
+      <a href="#sobre">Sobre</a>
+      <a href="https://www.nutripassaros.com.br" target="_blank" rel="noopener">nutripassaros.com.br</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Abrir lista de pedido">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="18" cy="20" r="1.5" fill="currentColor"/></svg>
+      <span class="cart-label">Meu pedido</span>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Catálogo digital Nutripássaros</h1>
+      <p>Encontre os produtos pelo nome ou código, monte sua lista e envie o pedido direto para o representante pelo WhatsApp.</p>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search" type="search" inputmode="search" autocomplete="off" placeholder="Buscar por nome, código ou embalagem (ex.: canário, 03050, 500g)" aria-label="Buscar produtos">
+        <button id="clearSearch" class="clear" aria-label="Limpar busca" hidden>×</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="filters wrap" aria-label="Filtros">
+    <div class="chips" id="chips" role="tablist"></div>
+    <div class="filter-row">
+      <select id="subFilter" aria-label="Linha / subcategoria" hidden></select>
+      <span class="result-count" id="resultCount"></span>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden>
+      <p>Nenhum produto encontrado.</p>
+      <button class="btn-quote" id="emptyQuote">Perguntar ao representante no WhatsApp</button>
+    </div>
+    <div class="more-wrap"><button class="btn-more" id="loadMore" hidden>Carregar mais produtos</button></div>
+    <div id="sentinel" aria-hidden="true"></div>
+  </section>
+
+  <section class="about wrap" id="sobre">
+    <div class="about-card">
+      <h2>Sobre a Nutripássaros</h2>
+      <p>A Nutripássaros foi fundada em 1998 com o propósito de oferecer alimentos especializados para pássaros e roedores, focando em nutrição de qualidade e rigor nos processos de fabricação. Com o crescimento do mercado, passou a produzir também linhas para cães e gatos e ingressou na distribuição de produtos veterinários.</p>
+      <p>Hoje, com mais de duas décadas de atuação, a Nutripássaros é sinônimo de confiança e inovação, entregando qualidade a seus clientes em todo o Brasil.</p>
+      <p class="about-mission"><strong>Missão:</strong> promover o bem-estar e a saúde dos animais, fabricando alimentos de alta qualidade e distribuindo produtos veterinários confiáveis.</p>
+      <a class="site-link" href="https://www.nutripassaros.com.br" target="_blank" rel="noopener">Visitar www.nutripassaros.com.br →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><b>Nutripássaros</b> · Catálogo 2025 · Este catálogo não é uma loja: não há pagamento nem finalização de compra no site. Os pedidos são enviados ao representante pelo WhatsApp.</p>
+    <p class="muted">Preços demonstrativos (valores fictícios). Imagens ilustrativas por categoria.</p>
+  </div>
+</footer>
+
+<!-- Lista de pedido -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Lista de pedido" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Meu pedido</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Fechar">×</button>
+  </div>
+  <div class="drawer-body">
+    <p class="demo-note">Preços demonstrativos – valores fictícios. O representante confirma preço e disponibilidade.</p>
+    <ul class="cart-list" id="cartList"></ul>
+    <p class="cart-empty" id="cartEmpty">Sua lista está vazia. Use o botão <b>Comprar</b> nos produtos para adicionar.</p>
+    <div class="customer">
+      <label>Seu nome (opcional)<input id="custName" type="text" autocomplete="name" placeholder="Ex.: João"></label>
+      <label>Nome da loja (opcional)<input id="storeName" type="text" autocomplete="organization" placeholder="Ex.: Pet Shop Bom Bicho"></label>
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total estimado <small>(preço demonstrativo)</small></span><strong id="cartTotal">R$ 0,00</strong></div>
+    <button class="btn-wa" id="sendOrder" disabled>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+      Enviar pedido pelo WhatsApp
+    </button>
+    <button class="btn-link" id="clearCart">Limpar lista</button>
+  </div>
+</aside>
+
+<a class="wa-float" id="waFloat" href="#" aria-label="Falar com o representante no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/products.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
